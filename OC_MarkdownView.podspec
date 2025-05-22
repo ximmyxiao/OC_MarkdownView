@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OC_MarkdownView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'MarkdownView is a markdown render like swift-markdown-ui but write in ObjectiveC.'
 
 # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/ximmyxiao/OC_MarkdownView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'ximmyxiao' => 'ximmyxiao@tencent.com' }
+  s.author           = { 'ximmyxiao' => 'ximmyxiao@gmail.com' }
   s.source           = { :git => 'https://github.com/ximmyxiao/OC_MarkdownView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
