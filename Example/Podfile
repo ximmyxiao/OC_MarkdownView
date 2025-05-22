@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'OC_MarkdownView_Example' do
+  pod 'OC_MarkdownView', :path => '../'
+
+  target 'OC_MarkdownView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
