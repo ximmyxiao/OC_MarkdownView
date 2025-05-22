@@ -22,7 +22,7 @@ pod 'OC_MarkdownView'
 
 ## Author
 
-ximmyxiao, ximmyxiao@tencent.com
+ximmyxiao, ximmyxiao@gmail.com
 
 ## License
 
