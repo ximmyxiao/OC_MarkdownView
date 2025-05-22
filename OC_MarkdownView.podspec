@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'OC_MarkdownView'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of OC_MarkdownView.'
+  s.summary          = 'MarkdownView is a markdown render like swift-markdown-ui but write in ObjectiveC.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  MarkdownView is simple and easy to use markdown render view for iOS. which is writen in Objective-C. And support most of the GFM markdown style.The whole project is referencing the [swift-markdown-ui]( https://github.com/gonzalezreal/swift-markdown-ui). thanks for the author. And I am just a little helper to express the swift-markdown-ui in ObjectiveC.
                        DESC
 
   s.homepage         = 'https://github.com/ximmyxiao/OC_MarkdownView'
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/ximmyxiao/OC_MarkdownView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '17.0'
 
   s.source_files = 'OC_MarkdownView/Classes/**/*'
   
@@ -37,6 +37,8 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+   s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'libcmark_gfm'
+  s.prefix_header_contents = '#import "MarkdownViewHeader.h"'
 end

@@ -1,15 +1,22 @@
 PODS:
-  - OC_MarkdownView (0.1.0)
+  - libcmark_gfm (0.29.4)
+  - OC_MarkdownView (0.1.0):
+    - libcmark_gfm
 
 DEPENDENCIES:
   - OC_MarkdownView (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - libcmark_gfm
 
 EXTERNAL SOURCES:
   OC_MarkdownView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  OC_MarkdownView: daf82c92b79b08d46513d1ce3ce10c67041346c3
+  libcmark_gfm: aed11fc48515bec53902b0fd4cddcbd42b5e94c2
+  OC_MarkdownView: 6547e3fdbdc60da945732e970a978a8a085f4813
 
 PODFILE CHECKSUM: 9efe52676b7855cd32f62457309be02692c11a1c
 

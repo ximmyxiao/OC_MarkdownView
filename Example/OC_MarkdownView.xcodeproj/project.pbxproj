@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		05D2FAB67C0FCB81D19BD00D /* Pods_OC_MarkdownView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OC_MarkdownView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AFD0D4C04C29C1CE5E333DB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4AFD0D4C04C29C1CE5E333DB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* OC_MarkdownView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OC_MarkdownView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,10 +59,10 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8075D512E7A98F1669DF3BEC /* OC_MarkdownView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = OC_MarkdownView.podspec; path = ../OC_MarkdownView.podspec; sourceTree = "<group>"; };
+		8075D512E7A98F1669DF3BEC /* OC_MarkdownView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OC_MarkdownView.podspec; path = ../OC_MarkdownView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD6EF52802743EF1388BAACE /* Pods_OC_MarkdownView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OC_MarkdownView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB7234B4CD18D5C1E1BD6B38 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		BB7234B4CD18D5C1E1BD6B38 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BBB1A11DB1FE4973054AEE5A /* Pods-OC_MarkdownView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OC_MarkdownView_Example.release.xcconfig"; path = "Target Support Files/Pods-OC_MarkdownView_Example/Pods-OC_MarkdownView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C2B306F8F3AE8365ABA1305A /* Pods-OC_MarkdownView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OC_MarkdownView_Example.debug.xcconfig"; path = "Target Support Files/Pods-OC_MarkdownView_Example/Pods-OC_MarkdownView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E0118B63D7321B0FAD2A78DA /* Pods-OC_MarkdownView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OC_MarkdownView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-OC_MarkdownView_Tests/Pods-OC_MarkdownView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,7 +193,6 @@
 				E0118B63D7321B0FAD2A78DA /* Pods-OC_MarkdownView_Tests.debug.xcconfig */,
 				E5E0F22F1870305FD7FF2FE7 /* Pods-OC_MarkdownView_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -303,10 +303,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-OC_MarkdownView_Example/Pods-OC_MarkdownView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/OC_MarkdownView/OC_MarkdownView.framework",
+				"${BUILT_PRODUCTS_DIR}/libcmark_gfm/libcmark_gfm.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OC_MarkdownView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libcmark_gfm.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
