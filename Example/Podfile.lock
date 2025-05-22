@@ -1,0 +1,16 @@
+PODS:
+  - OC_MarkdownView (0.1.0)
+
+DEPENDENCIES:
+  - OC_MarkdownView (from `../`)
+
+EXTERNAL SOURCES:
+  OC_MarkdownView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  OC_MarkdownView: daf82c92b79b08d46513d1ce3ce10c67041346c3
+
+PODFILE CHECKSUM: 9efe52676b7855cd32f62457309be02692c11a1c
+
+COCOAPODS: 1.16.2

@@ -1,0 +1,22 @@
+{
+  "name": "OC_MarkdownView",
+  "version": "0.1.0",
+  "summary": "A short description of OC_MarkdownView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ximmyxiao/OC_MarkdownView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ximmyxiao": "ximmyxiao@tencent.com"
+  },
+  "source": {
+    "git": "https://github.com/ximmyxiao/OC_MarkdownView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "OC_MarkdownView/Classes/**/*"
+}

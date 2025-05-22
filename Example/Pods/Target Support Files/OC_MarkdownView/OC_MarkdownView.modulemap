@@ -1,0 +1,6 @@
+framework module OC_MarkdownView {
+  umbrella header "OC_MarkdownView-umbrella.h"
+
+  export *
+  module * { export * }
+}
