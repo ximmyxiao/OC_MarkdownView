@@ -2,8 +2,8 @@
 //  UIImage+Ex.h
 //  QQTicket
 //
-//  Created by 启亮 谌 on 12-2-16.
-//  Copyright (c) 2012年 tencent. All rights reserved.
+//  Created by bright on 12-2-16.
+//  Copyright (c) 2012年 gmail. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

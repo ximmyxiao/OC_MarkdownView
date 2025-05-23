@@ -1,0 +1,37 @@
+You can call out code or a command within a sentence with single ticks.
+The text within the backticks will not be formatted.
+
+```
+Use `git status` to list all new or modified files that haven't yet  committed.
+```
+
+Use `git status` to list all new or modified files that haven't yet  committed.
+
+To format code or text into its own distinct block, either use triple ticks
+(` ``` `) or indent each line by 4 spaces.
+
+~~~
+After creating a group, any modifier you apply to the group affects
+all of that group’s members.
+
+```swift
+Group {
+    Text("SwiftUI")
+    Text("Combine")
+    Text("Swift System")
+}
+.font(.headline)
+```
+~~~
+
+After creating a group, any modifier you apply to the group affects
+all of that group’s members.
+
+```swift
+Group {
+    Text("SwiftUI")
+    Text("Combine")
+    Text("Swift System")
+}
+.font(.headline)
+```

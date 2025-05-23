@@ -3,7 +3,7 @@
 //  QQTicket
 //
 //  Created by 启亮 谌 on 12-2-16.
-//  Copyright (c) 2012年 tencent. All rights reserved.
+//  Copyright (c) 2012年 gmail. All rights reserved.
 //
 
 #import "UIImage+Ex.h"

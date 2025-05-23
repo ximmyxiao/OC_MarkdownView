@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00EEC0122DE05C6600DEDE55 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEC0112DE05C6600DEDE55 /* ExampleViewController.m */; };
+		00EEC0182DE05D1000DEDE55 /* SSECell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEC0142DE05D1000DEDE55 /* SSECell.m */; };
+		00EEC0192DE05D1000DEDE55 /* SSEContentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEC0172DE05D1000DEDE55 /* SSEContentViewModel.m */; };
+		00EEC01A2DE05D1000DEDE55 /* SSECell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EEC0152DE05D1000DEDE55 /* SSECell.xib */; };
 		263286644E7AA3E857962850 /* Pods_OC_MarkdownView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D2FAB67C0FCB81D19BD00D /* Pods_OC_MarkdownView_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -37,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00EEC0102DE05C6600DEDE55 /* ExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
+		00EEC0112DE05C6600DEDE55 /* ExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
+		00EEC0132DE05D1000DEDE55 /* SSECell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSECell.h; sourceTree = "<group>"; };
+		00EEC0142DE05D1000DEDE55 /* SSECell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSECell.m; sourceTree = "<group>"; };
+		00EEC0152DE05D1000DEDE55 /* SSECell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSECell.xib; sourceTree = "<group>"; };
+		00EEC0162DE05D1000DEDE55 /* SSEContentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSEContentViewModel.h; sourceTree = "<group>"; };
+		00EEC0172DE05D1000DEDE55 /* SSEContentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSEContentViewModel.m; sourceTree = "<group>"; };
 		05D2FAB67C0FCB81D19BD00D /* Pods_OC_MarkdownView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OC_MarkdownView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD0D4C04C29C1CE5E333DB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* OC_MarkdownView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OC_MarkdownView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +79,10 @@
 		E0118B63D7321B0FAD2A78DA /* Pods-OC_MarkdownView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OC_MarkdownView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-OC_MarkdownView_Tests/Pods-OC_MarkdownView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E5E0F22F1870305FD7FF2FE7 /* Pods-OC_MarkdownView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OC_MarkdownView_Tests.release.xcconfig"; path = "Target Support Files/Pods-OC_MarkdownView_Tests/Pods-OC_MarkdownView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		00EEC00F2DE05A6700DEDE55 /* Examples */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Examples; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6003F587195388D20070C39A /* Frameworks */ = {
@@ -132,14 +147,23 @@
 		6003F593195388D20070C39A /* Example for OC_MarkdownView */ = {
 			isa = PBXGroup;
 			children = (
+				00EEC00F2DE05A6700DEDE55 /* Examples */,
 				6003F59C195388D20070C39A /* MVAppDelegate.h */,
 				6003F59D195388D20070C39A /* MVAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				6003F59B195388D20070C39A /* OC_MarkdownView-Prefix.pch */,
 				6003F5A5195388D20070C39A /* MVViewController.h */,
 				6003F5A6195388D20070C39A /* MVViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				00EEC0102DE05C6600DEDE55 /* ExampleViewController.h */,
+				00EEC0112DE05C6600DEDE55 /* ExampleViewController.m */,
+				00EEC0132DE05D1000DEDE55 /* SSECell.h */,
+				00EEC0142DE05D1000DEDE55 /* SSECell.m */,
+				00EEC0152DE05D1000DEDE55 /* SSECell.xib */,
+				00EEC0162DE05D1000DEDE55 /* SSEContentViewModel.h */,
+				00EEC0172DE05D1000DEDE55 /* SSEContentViewModel.m */,
 			);
 			name = "Example for OC_MarkdownView";
 			path = OC_MarkdownView;
@@ -151,7 +175,6 @@
 				6003F595195388D20070C39A /* OC_MarkdownView-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
-				6003F59B195388D20070C39A /* OC_MarkdownView-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -212,6 +235,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				00EEC00F2DE05A6700DEDE55 /* Examples */,
 			);
 			name = OC_MarkdownView_Example;
 			productName = OC_MarkdownView;
@@ -279,6 +305,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				00EEC01A2DE05D1000DEDE55 /* SSECell.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -367,6 +394,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* MVAppDelegate.m in Sources */,
+				00EEC0182DE05D1000DEDE55 /* SSECell.m in Sources */,
+				00EEC0192DE05D1000DEDE55 /* SSEContentViewModel.m in Sources */,
+				00EEC0122DE05C6600DEDE55 /* ExampleViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* MVViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
