@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OC_MarkdownView'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'MarkdownView is a markdown render like swift-markdown-ui but write in ObjectiveC.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  MarkdownView is simple and easy to use markdown render view for iOS. which is writen in Objective-C. And support most of the GFM markdown style.The whole project is referencing the [swift-markdown-ui]( https://github.com/gonzalezreal/swift-markdown-ui). thanks for the author. And I am just a little helper to express the swift-markdown-ui in ObjectiveC.
+  MarkdownView is a simple and easy-to-use Markdown rendering view for iOS, written in Objective-C. It supports most of the GFM Markdown styles. The project references [swift-markdown-ui]( https://github.com/gonzalezreal/swift-markdown-ui). Thanks to the author of swift-markdown-ui; this project aims to provide similar functionality in Objective-C.
                        DESC
 
   s.homepage         = 'https://github.com/ximmyxiao/OC_MarkdownView'
