@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="943" y="-19"/>
         </scene>
-        <!--Examples-->
+        <!--OC_MarkdownView-->
         <scene sceneID="OFa-rf-Rnj">
             <objects>
-                <tableViewController title="Examples" id="ghN-al-gK6" customClass="ExampleViewController" sceneMemberID="viewController">
+                <tableViewController id="ghN-al-gK6" customClass="ExampleViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Lfk-oa-7X9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +132,7 @@
                             <outlet property="delegate" destination="ghN-al-gK6" id="B1G-uD-tZg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="a3J-ac-rRF"/>
+                    <navigationItem key="navigationItem" title="OC_MarkdownView" id="a3J-ac-rRF"/>
                     <connections>
                         <outlet property="tableView" destination="Lfk-oa-7X9" id="32K-PC-MB2"/>
                         <segue destination="whP-gf-Uak" kind="show" identifier="showDetail" id="L9t-XA-PeU"/>
