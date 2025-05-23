@@ -5,10 +5,11 @@
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+```
     MarkdownView *markdownView = [[MarkdownView alloc] initWithFrame:self.view.bounds];
     markdownView.markdownText = @"# Hello World\n\nThis is a Markdown text.\n\n- Item 1\n- Item 2\n- Item 3";
     [self.view addSubview:markdownView];
-
+```
 ## Requirements
 - iOS 17.0 or later
 ## Installation
