@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MarkdownView : UIView
-@property(nonatomic, strong) NSString* markdownText;
+@property (nonatomic, strong) NSString* markdownText;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 #import <libcmark_gfm/libcmark_gfm.h>
-typedef NSString *NodeType NS_STRING_ENUM;
+typedef NSString* NodeType NS_STRING_ENUM;
 
 // 基本类型
 FOUNDATION_EXPORT NodeType const NodeTypeDocument;
@@ -59,22 +59,21 @@ typedef NS_ENUM(NSUInteger, CMarkNodeType) {
 
 @interface CMarkNode : NSObject
 
-@property (nonatomic, readonly) cmark_node *node;
+@property (nonatomic, readonly) cmark_node* node;
 
 // 初始化方法
-- (instancetype)initWithMarkdownString:(NSString *)markdown;
-+ (instancetype)nodeWithMarkdownString:(NSString *)markdown;
+- (instancetype)initWithMarkdownString:(NSString*)markdown;
++ (instancetype)nodeWithMarkdownString:(NSString*)markdown;
 
 // 节点操作
-- (CMarkNode *)childAtIndex:(NSUInteger)index;
+- (CMarkNode*)childAtIndex:(NSUInteger)index;
 - (NSUInteger)childCount;
-- (CMarkNode *)next;
-- (CMarkNode *)previous;
+- (CMarkNode*)next;
+- (CMarkNode*)previous;
 
-
-- (NSString *)nodeTypeName;
+- (NSString*)nodeTypeName;
 // 获取文本内容
-- (NSString *)text;
+- (NSString*)text;
 - (NSInteger)headingLevel;
 - (BOOL)isTightList;
 - (BOOL)isTaskListItemChecked;
@@ -84,7 +83,7 @@ typedef NS_ENUM(NSUInteger, CMarkNodeType) {
 
 - (void)printAST;
 // 遍历
-- (void)enumerateChildrenUsingBlock:(void (^)(CMarkNode *child, BOOL *stop))block;
+- (void)enumerateChildrenUsingBlock:(void (^)(CMarkNode* child, BOOL* stop))block;
 - (NSArray<CMarkNode*>*)children;
 
 @end

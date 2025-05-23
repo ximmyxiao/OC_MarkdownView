@@ -9,15 +9,15 @@
 #import "TableColumnView.h"
 
 @interface TableView ()
-@property (nonatomic, strong) UIStackView *stackView;
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIStackView* stackView;
+@property (nonatomic, strong) UIScrollView* scrollView;
 @end
 
 @implementation TableView
 
 - (void)constructUI
 {
-    UIColor *borderColor = UIColorFromRGB(0xe4e4e8);
+    UIColor* borderColor = UIColorFromRGB(0xe4e4e8);
     self.layer.borderColor = borderColor.CGColor;
     self.layer.borderWidth = 1;
     self.layer.cornerRadius = 5;
@@ -62,7 +62,7 @@
 {
 }
 
-- (void)setNode:(CMarkNode *)node
+- (void)setNode:(CMarkNode*)node
 {
     _node = node;
     [self updateUI];
@@ -74,36 +74,36 @@
     [[self.stackView arrangedSubviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     BOOL isFirstNode = YES;
 
-    for (CMarkNode *child in [self.node children]) {
+    for (CMarkNode* child in [self.node children]) {
         if ([[child nodeTypeName] isEqualToString:NodeTypeTableHead]) {
             // Create a TableColumnView for each child node
             NSInteger headColumnCount = [child childCount];
             for (NSInteger i = 0; i < headColumnCount; i++) {
                 if (!isFirstNode) {
-                    UIView *separator = [UIView new];
+                    UIView* separator = [UIView new];
                     separator.translatesAutoresizingMaskIntoConstraints = NO;
                     separator.backgroundColor = [UIColor borderColor];
                     [separator addConstraint:[separator.widthAnchor constraintEqualToConstant:0.5]];
                     [self.stackView addArrangedSubview:separator];
                 }
 
-                NSMutableArray *nodes = [NSMutableArray array];
+                NSMutableArray* nodes = [NSMutableArray array];
 
-                for (CMarkNode *child2 in [self.node children]) {
+                for (CMarkNode* child2 in [self.node children]) {
                     if ([[child2 children] count] > i) {
                         [nodes addObject:[child2 childAtIndex:i]];
                     } else {
-                        CMarkNode *node = [[CMarkNode alloc] init];
+                        CMarkNode* node = [[CMarkNode alloc] init];
                         [nodes addObject:node];
                     }
                 }
 
-                TableColumnView *columnView = [[TableColumnView alloc] init];
+                TableColumnView* columnView = [[TableColumnView alloc] init];
                 columnView.nodes = nodes;
                 [self.stackView addArrangedSubview:columnView];
                 isFirstNode = NO;
             }
-            
+
             return;
         }
     }

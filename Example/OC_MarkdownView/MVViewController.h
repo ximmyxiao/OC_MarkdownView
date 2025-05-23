@@ -9,6 +9,6 @@
 @import UIKit;
 
 @interface MVViewController : UIViewController
-@property (nonatomic,strong) NSString* markdownContentType;
+@property (nonatomic, strong) NSString* markdownContentType;
 
 @end

@@ -9,14 +9,15 @@
 #import "MarkdownView.h"
 
 @interface SSECell ()
-@property (weak, nonatomic) IBOutlet MarkdownView *markdownView;
-@property (weak, nonatomic) IBOutlet UILabel *thoughtLabel;
+@property (weak, nonatomic) IBOutlet MarkdownView* markdownView;
+@property (weak, nonatomic) IBOutlet UILabel* thoughtLabel;
 
 @end
 
 @implementation SSECell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
     [self.thoughtLabel setContentHuggingPriority:249 forAxis:UILayoutConstraintAxisVertical];
@@ -24,13 +25,14 @@
     self.thoughtLabel.backgroundColor = [UIColor grayColor];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
 
-- (void)setViewModel:(SSEContentViewModel *)viewModel
+- (void)setViewModel:(SSEContentViewModel*)viewModel
 {
     _viewModel = viewModel;
     self.thoughtLabel.text = viewModel.thought;

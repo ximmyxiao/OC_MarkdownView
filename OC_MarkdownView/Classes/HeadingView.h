@@ -10,8 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HeadingView : UIView
-@property(nonatomic,strong) CMarkNode* node;
-@property(nonatomic,assign) CGFloat firstLineCenter;
+@property (nonatomic, strong) CMarkNode* node;
+@property (nonatomic, assign) CGFloat firstLineCenter;
 @end
 
 NS_ASSUME_NONNULL_END

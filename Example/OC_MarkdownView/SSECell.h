@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SSECell : UITableViewCell
-@property(nonatomic,strong) SSEContentViewModel* viewModel;
+@property (nonatomic, strong) SSEContentViewModel* viewModel;
 @end
 
 NS_ASSUME_NONNULL_END

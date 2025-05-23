@@ -8,8 +8,8 @@
 #import "TaskListView.h"
 #import "NodeToViewManager.h"
 
-@interface TaskListView()
-@property (nonatomic, strong) UIStackView *stackView;
+@interface TaskListView ()
+@property (nonatomic, strong) UIStackView* stackView;
 @end
 
 @implementation TaskListView
@@ -36,7 +36,6 @@
     ]];
 }
 
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -51,7 +50,7 @@
 {
 }
 
-- (void)setNode:(CMarkNode *)node
+- (void)setNode:(CMarkNode*)node
 {
     _node = node;
     [self updateUI];
@@ -59,29 +58,26 @@
 
 - (void)updateUI
 {
-    //remove all arrangedSubviews from stackView
+    // remove all arrangedSubviews from stackView
     [[self.stackView arrangedSubviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    for (CMarkNode *child in [self.node children]) {
+    for (CMarkNode* child in [self.node children]) {
         if ([[child nodeTypeName] isEqualToString:NodeTypeTaskListItem]) {
             UIStackView* itemStackView = [[UIStackView alloc] init];
             itemStackView.axis = UILayoutConstraintAxisHorizontal;
             itemStackView.translatesAutoresizingMaskIntoConstraints = NO;
             BOOL isCompleted = [child isTaskListItemChecked];
-            UIImage *image = [UIImage systemImageNamed:isCompleted ? @"checkmark.square.fill" : @"square"];
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+            UIImage* image = [UIImage systemImageNamed:isCompleted ? @"checkmark.square.fill" : @"square"];
+            UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
             imageView.translatesAutoresizingMaskIntoConstraints = NO;
             imageView.contentMode = UIViewContentModeTop;
-            [imageView addConstraints:@[[imageView.widthAnchor constraintEqualToConstant:19]
-                                       ]];
+            [imageView addConstraints:@[ [imageView.widthAnchor constraintEqualToConstant:19] ]];
             [itemStackView addArrangedSubview:imageView];
-            
+
             UIView* view = [[NodeToViewManager sharedInstance] viewForNode:child];
             [itemStackView addArrangedSubview:view];
 
             [self.stackView addArrangedSubview:itemStackView];
         }
     }
-    
-
 }
 @end

@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NodeToViewManager : NSObject
 + (instancetype)sharedInstance;
-- (UIView *)viewForNode:(CMarkNode *)node;
-- (UIView*)viewForNode:(CMarkNode *)node withDefaultAttributes:(NSDictionary* _Nullable)attributes;
+- (UIView*)viewForNode:(CMarkNode*)node;
+- (UIView*)viewForNode:(CMarkNode*)node withDefaultAttributes:(NSDictionary* _Nullable)attributes;
 + (CGFloat)firstTextLineBaseOfView:(UIView*)containerView;
 @end
 

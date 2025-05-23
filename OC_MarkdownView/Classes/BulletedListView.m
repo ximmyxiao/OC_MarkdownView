@@ -9,8 +9,8 @@
 #import "NodeToViewManager.h"
 #import "UIImage+Ex.h"
 
-@interface BulletedListView()
-@property (nonatomic, strong) UIStackView *stackView;
+@interface BulletedListView ()
+@property (nonatomic, strong) UIStackView* stackView;
 @end
 
 @implementation BulletedListView
@@ -37,7 +37,6 @@
     ]];
 }
 
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -52,7 +51,7 @@
 {
 }
 
-- (void)setNode:(CMarkNode *)node
+- (void)setNode:(CMarkNode*)node
 {
     _node = node;
     [self updateUI];
@@ -60,58 +59,58 @@
 
 - (void)updateUI
 {
-    //remove all arrangedSubviews from stackView
+    // remove all arrangedSubviews from stackView
     [[self.stackView arrangedSubviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    for (CMarkNode *child in [self.node children]) {
+    for (CMarkNode* child in [self.node children]) {
         if ([[child nodeTypeName] isEqualToString:NodeTypeItem]) {
             UIStackView* itemStackView = [[UIStackView alloc] init];
             itemStackView.axis = UILayoutConstraintAxisHorizontal;
             itemStackView.translatesAutoresizingMaskIntoConstraints = NO;
 
-            UIImage *image = [UIImage systemImageNamed: @"circle.fill"];
+            UIImage* image = [UIImage systemImageNamed:@"circle.fill"];
             image = [image imageWithZoomScale:0.3];
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+            UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
             imageView.translatesAutoresizingMaskIntoConstraints = NO;
             imageView.contentMode = UIViewContentModeTop;
-            [imageView addConstraints:@[[imageView.widthAnchor constraintEqualToConstant:19]
-                                       ]];
-//            [itemStackView addArrangedSubview:imageView];
+            [imageView addConstraints:@[ [imageView.widthAnchor constraintEqualToConstant:19] ]];
+            //            [itemStackView addArrangedSubview:imageView];
 
             UIView* view = [[NodeToViewManager sharedInstance] viewForNode:child];
-//            [itemStackView addArrangedSubview:view];
-            
+            //            [itemStackView addArrangedSubview:view];
+
             UIView* wrapperView = [UIView new];
             wrapperView.translatesAutoresizingMaskIntoConstraints = NO;
             [wrapperView addSubview:imageView];
             [wrapperView addSubview:view];
-           
+
             CGFloat lineHeight = [NodeToViewManager firstTextLineBaseOfView:view];
 
-            if (lineHeight > 0)
-            {
+            if (lineHeight > 0) {
                 [wrapperView addConstraints:@[
                     [imageView.leadingAnchor constraintEqualToAnchor:wrapperView.leadingAnchor],
-                    [imageView.topAnchor constraintEqualToAnchor:wrapperView.topAnchor constant:lineHeight / 2 - image.size.height/2],
+                    [imageView.topAnchor constraintEqualToAnchor:wrapperView.topAnchor
+                                                        constant:lineHeight / 2 - image.size.height / 2],
                     [view.topAnchor constraintEqualToAnchor:wrapperView.topAnchor],
-                    [view.leadingAnchor constraintEqualToAnchor:imageView.trailingAnchor constant:5],
+                    [view.leadingAnchor constraintEqualToAnchor:imageView.trailingAnchor
+                                                       constant:5],
                     [view.bottomAnchor constraintEqualToAnchor:wrapperView.bottomAnchor],
                     [view.trailingAnchor constraintEqualToAnchor:wrapperView.trailingAnchor],
-                    
+
                 ]];
-            }
-            else
-            {
+            } else {
                 [wrapperView addConstraints:@[
                     [imageView.leadingAnchor constraintEqualToAnchor:wrapperView.leadingAnchor],
-                    [imageView.topAnchor constraintEqualToAnchor:wrapperView.topAnchor constant:0],
+                    [imageView.topAnchor constraintEqualToAnchor:wrapperView.topAnchor
+                                                        constant:0],
                     [view.topAnchor constraintEqualToAnchor:wrapperView.topAnchor],
-                    [view.leadingAnchor constraintEqualToAnchor:imageView.trailingAnchor constant:5],
+                    [view.leadingAnchor constraintEqualToAnchor:imageView.trailingAnchor
+                                                       constant:5],
                     [view.bottomAnchor constraintEqualToAnchor:wrapperView.bottomAnchor],
                     [view.trailingAnchor constraintEqualToAnchor:wrapperView.trailingAnchor],
-                    
+
                 ]];
             }
-            
+
             [self.stackView addArrangedSubview:wrapperView];
         }
     }

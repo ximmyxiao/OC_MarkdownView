@@ -6,5 +6,3 @@
 //
 
 #import "NodeType.h"
-
-

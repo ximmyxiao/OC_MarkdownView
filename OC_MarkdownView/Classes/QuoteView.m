@@ -9,7 +9,7 @@
 #import "NodeToViewManager.h"
 
 @interface QuoteView ()
-@property (nonatomic, strong) UIStackView *stackView;
+@property (nonatomic, strong) UIStackView* stackView;
 @end
 
 @implementation QuoteView
@@ -36,8 +36,6 @@
     ]];
 }
 
-
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -47,7 +45,7 @@
     return self;
 }
 
-- (void)setNode:(CMarkNode *)node
+- (void)setNode:(CMarkNode*)node
 {
     _node = node;
     [self updateUI];
@@ -55,7 +53,7 @@
 
 - (void)updateUI
 {
-    //remove all arrangedSubviews from stackView
+    // remove all arrangedSubviews from stackView
     [[self.stackView arrangedSubviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     UIView* quoteMarker = [UIView new];
     quoteMarker.backgroundColor = [UIColor borderColor];
@@ -64,15 +62,14 @@
     quoteMarker.translatesAutoresizingMaskIntoConstraints = NO;
     [quoteMarker addConstraint:[quoteMarker.widthAnchor constraintEqualToConstant:4]];
     [self.stackView addArrangedSubview:quoteMarker];
-    
-    UIView* view = [[NodeToViewManager sharedInstance] viewForNode:self.node withDefaultAttributes:@{STYLE_TEXT_ATTRIBUTE_KEY_NAME:@{NSForegroundColorAttributeName:[UIColor secondaryTextColor]}}];
+
+    UIView* view = [[NodeToViewManager sharedInstance] viewForNode:self.node withDefaultAttributes:@{ STYLE_TEXT_ATTRIBUTE_KEY_NAME : @ { NSForegroundColorAttributeName : [UIColor secondaryTextColor] } }];
     [self.stackView addArrangedSubview:view];
-    
+
     UIView* contentView = [UIView new];
     contentView.translatesAutoresizingMaskIntoConstraints = NO;
     contentView.backgroundColor = [UIColor redColor];
     [self.stackView addArrangedSubview:contentView];
-
 }
 
 @end

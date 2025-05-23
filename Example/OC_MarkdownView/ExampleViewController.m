@@ -8,30 +8,29 @@
 #import "ExampleViewController.h"
 #import "MVViewController.h"
 
-@interface ExampleViewController ()<UITableViewDelegate>
-@property(nonatomic,strong) NSIndexPath* currentSelectIndexPath;
+@interface ExampleViewController () <UITableViewDelegate>
+@property (nonatomic, strong) NSIndexPath* currentSelectIndexPath;
 @end
 
 @implementation ExampleViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
-
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+
     // Configure the cell...
-    
+
     return cell;
 }
 */
@@ -52,7 +51,7 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 */
 
@@ -80,37 +79,31 @@
 }
 */
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     self.currentSelectIndexPath = indexPath;
     [self performSegueWithIdentifier:@"showDetail" sender:self];
-
-    
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+{
     if ([segue.identifier isEqualToString:@"showDetail"]) {
-        UIViewController *destinationVC = segue.destinationViewController;
-        
+        UIViewController* destinationVC = segue.destinationViewController;
+
         // 传递参数到目标视图控制器
         if ([destinationVC respondsToSelector:@selector(setMarkdownContentType:)]) {
-            if (self.currentSelectIndexPath.section == 0)
-            {
-                NSArray *allTypes = @[@"Heading",@"List",@"TextStyles",@"Quote",@"Code",@"Table"];
-                if (self.currentSelectIndexPath.row < allTypes.count)
-                {
-                    NSString *type = allTypes[self.currentSelectIndexPath.row];
+            if (self.currentSelectIndexPath.section == 0) {
+                NSArray* allTypes = @[ @"Heading", @"List", @"TextStyles", @"Quote", @"Code", @"Table" ];
+                if (self.currentSelectIndexPath.row < allTypes.count) {
+                    NSString* type = allTypes[self.currentSelectIndexPath.row];
                     destinationVC.navigationItem.title = type;
                     [destinationVC performSelector:@selector(setMarkdownContentType:) withObject:type];
                 }
-            }
-            else
-            {
-                NSString *type = @"SSE";
+            } else {
+                NSString* type = @"SSE";
                 destinationVC.navigationItem.title = type;
                 [destinationVC performSelector:@selector(setMarkdownContentType:) withObject:type];
             }
-
         }
     }
 }

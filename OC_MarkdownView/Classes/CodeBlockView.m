@@ -7,9 +7,8 @@
 
 #import "CodeBlockView.h"
 
-
-@interface CodeBlockView()
-@property (nonatomic, strong) UIStackView *stackView;
+@interface CodeBlockView ()
+@property (nonatomic, strong) UIStackView* stackView;
 @end
 
 @implementation CodeBlockView
@@ -37,7 +36,6 @@
     ]];
 }
 
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -52,7 +50,7 @@
 {
 }
 
-- (void)setNode:(CMarkNode *)node
+- (void)setNode:(CMarkNode*)node
 {
     _node = node;
     [self updateUI];
@@ -60,20 +58,19 @@
 
 - (void)updateUI
 {
-    //remove all arrangedSubviews from stackView
+    // remove all arrangedSubviews from stackView
     [[self.stackView arrangedSubviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     NSMutableAttributedString* result = [NSMutableAttributedString new];
 
     NSString* code = [self.node text];
-    if ([code hasSuffix:@"\n"])
-    {
+    if ([code hasSuffix:@"\n"]) {
         code = [code substringToIndex:code.length - 1];
     }
-    
+
     NSDictionary* attributes = [self getAttributes];
     NSAttributedString* text = [[NSAttributedString alloc] initWithString:code attributes:attributes];
     [result appendAttributedString:text];
-    
+
     UILabel* label = [UILabel new];
     label.translatesAutoresizingMaskIntoConstraints = NO;
     label.numberOfLines = 0;
@@ -89,30 +86,32 @@
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.showsHorizontalScrollIndicator = NO;
     [scrollView addSubview:label];
-   
-    CGFloat scrollViewHeight = ceilf(label.frame.size.height + 16*2);
-    [scrollView addConstraints:@[
-        [scrollView.contentLayoutGuide.topAnchor constraintEqualToAnchor:label.topAnchor constant:0],
-        [scrollView.contentLayoutGuide.leadingAnchor constraintEqualToAnchor:label.leadingAnchor constant:0],
-        [scrollView.contentLayoutGuide.trailingAnchor constraintEqualToAnchor:label.trailingAnchor constant:0],
-        [scrollView.contentLayoutGuide.bottomAnchor constraintEqualToAnchor:label.bottomAnchor constant:0],
-        [scrollView.heightAnchor constraintEqualToConstant:scrollViewHeight],
-        
-    ]];
-    
 
-        
+    CGFloat scrollViewHeight = ceilf(label.frame.size.height + 16 * 2);
+    [scrollView addConstraints:@[
+        [scrollView.contentLayoutGuide.topAnchor constraintEqualToAnchor:label.topAnchor
+                                                                constant:0],
+        [scrollView.contentLayoutGuide.leadingAnchor constraintEqualToAnchor:label.leadingAnchor
+                                                                    constant:0],
+        [scrollView.contentLayoutGuide.trailingAnchor constraintEqualToAnchor:label.trailingAnchor
+                                                                     constant:0],
+        [scrollView.contentLayoutGuide.bottomAnchor constraintEqualToAnchor:label.bottomAnchor
+                                                                   constant:0],
+        [scrollView.heightAnchor constraintEqualToConstant:scrollViewHeight],
+
+    ]];
+
     [self.stackView addArrangedSubview:scrollView];
-    
 }
 
 - (NSDictionary*)getAttributes
 {
-    
+
     NSMutableParagraphStyle* psDefault = [NSMutableParagraphStyle new];
-    psDefault.lineSpacing = 0.225*17;
+    psDefault.lineSpacing = 0.225 * 17;
     NSDictionary* attributes = @{
-        NSFontAttributeName: [UIFont systemFontOfSize:ceil(17 * 0.85)],NSParagraphStyleAttributeName: psDefault,
+        NSFontAttributeName : [UIFont systemFontOfSize:ceil(17 * 0.85)],
+        NSParagraphStyleAttributeName : psDefault,
     };
     return attributes;
 }

@@ -8,8 +8,8 @@
 #import "TableColumnView.h"
 #import "InlineTextView.h"
 
-@interface TableColumnView()
-@property (nonatomic, strong) UIStackView *stackView;
+@interface TableColumnView ()
+@property (nonatomic, strong) UIStackView* stackView;
 @end
 
 @implementation TableColumnView
@@ -36,7 +36,6 @@
     ]];
 }
 
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -51,7 +50,7 @@
 {
 }
 
-- (void)setNodes:(NSArray<CMarkNode *> *)nodes
+- (void)setNodes:(NSArray<CMarkNode*>*)nodes
 {
     _nodes = nodes;
     [self updateUI];
@@ -59,14 +58,12 @@
 
 - (void)updateUI
 {
-    //remove all arrangedSubviews from stackView
+    // remove all arrangedSubviews from stackView
     [[self.stackView arrangedSubviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
+
     BOOL isFirstNode = YES;
-    for (CMarkNode *node in self.nodes)
-    {
-        if (!isFirstNode)
-        {
+    for (CMarkNode* node in self.nodes) {
+        if (!isFirstNode) {
             UIView* separator = [UIView new];
             separator.translatesAutoresizingMaskIntoConstraints = NO;
             separator.backgroundColor = [UIColor borderColor];
@@ -74,29 +71,30 @@
             [self.stackView addArrangedSubview:separator];
         }
 
-        if ([[node nodeTypeName] isEqualToString:NodeTypeTableCell])
-        {
+        if ([[node nodeTypeName] isEqualToString:NodeTypeTableCell]) {
             InlineTextView* lineView = [InlineTextView new];
             lineView.translatesAutoresizingMaskIntoConstraints = NO;
             [lineView setNumberOflines:1];
-            [lineView buildFromBlockNode:node ];
-                                                               
-            
+            [lineView buildFromBlockNode:node];
+
             UIView* wrapperView = [UIView new];
             wrapperView.translatesAutoresizingMaskIntoConstraints = NO;
             wrapperView.backgroundColor = [UIColor clearColor];
             [wrapperView addSubview:lineView];
-            
+
             [wrapperView addConstraints:@[
-                
-                [lineView.topAnchor constraintEqualToAnchor:wrapperView.topAnchor constant:6],
-                [lineView.leadingAnchor constraintEqualToAnchor:wrapperView.leadingAnchor constant:13],
-                [wrapperView.trailingAnchor constraintEqualToAnchor:lineView.trailingAnchor constant:13],
-                [wrapperView.bottomAnchor constraintEqualToAnchor:lineView.bottomAnchor constant:6]
+
+                [lineView.topAnchor constraintEqualToAnchor:wrapperView.topAnchor
+                                                   constant:6],
+                [lineView.leadingAnchor constraintEqualToAnchor:wrapperView.leadingAnchor
+                                                       constant:13],
+                [wrapperView.trailingAnchor constraintEqualToAnchor:lineView.trailingAnchor
+                                                           constant:13],
+                [wrapperView.bottomAnchor constraintEqualToAnchor:lineView.bottomAnchor
+                                                         constant:6]
             ]];
             [self.stackView addArrangedSubview:wrapperView];
             isFirstNode = NO;
-
         }
     }
 }

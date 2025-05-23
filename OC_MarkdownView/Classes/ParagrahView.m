@@ -8,8 +8,8 @@
 #import "ParagrahView.h"
 #import "InlineTextView.h"
 
-@interface ParagrahView()
-@property (nonatomic, strong) UIStackView *stackView;
+@interface ParagrahView ()
+@property (nonatomic, strong) UIStackView* stackView;
 @end
 
 @implementation ParagrahView
@@ -35,8 +35,6 @@
     ]];
 }
 
-
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -45,7 +43,7 @@
     }
     return self;
 }
-- (void)setNode:(CMarkNode *)node
+- (void)setNode:(CMarkNode*)node
 {
     _node = node;
     [self updateUI];
@@ -53,26 +51,22 @@
 
 - (void)updateUI
 {
-    //remove all arrangedSubviews from stackView
+    // remove all arrangedSubviews from stackView
     [[self.stackView arrangedSubviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-//    UIView* topSeparator = [UIView new];
-//    topSeparator.translatesAutoresizingMaskIntoConstraints = NO;
-//    topSeparator.backgroundColor = [UIColor clearColor];
-//    [topSeparator addConstraint:[topSeparator.heightAnchor constraintEqualToConstant:17]];
-//    [self.stackView addArrangedSubview:topSeparator];
-    
+    //    UIView* topSeparator = [UIView new];
+    //    topSeparator.translatesAutoresizingMaskIntoConstraints = NO;
+    //    topSeparator.backgroundColor = [UIColor clearColor];
+    //    [topSeparator addConstraint:[topSeparator.heightAnchor constraintEqualToConstant:17]];
+    //    [self.stackView addArrangedSubview:topSeparator];
+
     InlineTextView* content = [InlineTextView new];
     content.translatesAutoresizingMaskIntoConstraints = NO;
-    if ([self.defaultAttributes isKindOfClass:[NSDictionary class]])
-    {
+    if ([self.defaultAttributes isKindOfClass:[NSDictionary class]]) {
         [content buildFromBlockNode:self.node withAttributes:self.defaultAttributes];
-    }
-    else
-    {
+    } else {
         [content buildFromBlockNode:self.node];
     }
-    
-    [self.stackView addArrangedSubview:content];
 
+    [self.stackView addArrangedSubview:content];
 }
 @end

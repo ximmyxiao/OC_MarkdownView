@@ -154,9 +154,6 @@
 				6003F59B195388D20070C39A /* OC_MarkdownView-Prefix.pch */,
 				6003F5A5195388D20070C39A /* MVViewController.h */,
 				6003F5A6195388D20070C39A /* MVViewController.m */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
-				6003F594195388D20070C39A /* Supporting Files */,
 				00EEC0102DE05C6600DEDE55 /* ExampleViewController.h */,
 				00EEC0112DE05C6600DEDE55 /* ExampleViewController.m */,
 				00EEC0132DE05D1000DEDE55 /* SSECell.h */,
@@ -164,6 +161,9 @@
 				00EEC0152DE05D1000DEDE55 /* SSECell.xib */,
 				00EEC0162DE05D1000DEDE55 /* SSEContentViewModel.h */,
 				00EEC0172DE05D1000DEDE55 /* SSEContentViewModel.m */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for OC_MarkdownView";
 			path = OC_MarkdownView;

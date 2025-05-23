@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TaskListView : UIView
-@property(nonatomic,strong) CMarkNode* node;
+@property (nonatomic, strong) CMarkNode* node;
 
 @end
 

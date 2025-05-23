@@ -8,9 +8,8 @@
 #import "HeadingView.h"
 #import "InlineTextView.h"
 
-
-@interface HeadingView()
-@property (nonatomic, strong) UIStackView *stackView;
+@interface HeadingView ()
+@property (nonatomic, strong) UIStackView* stackView;
 @end
 
 @implementation HeadingView
@@ -37,8 +36,6 @@
     ]];
 }
 
-
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -51,9 +48,8 @@
 
 - (void)commonInit
 {
-
 }
-- (void)setNode:(CMarkNode *)node
+- (void)setNode:(CMarkNode*)node
 {
     _node = node;
     [self updateUI];
@@ -61,26 +57,24 @@
 
 - (void)updateUI
 {
-    //remove all arrangedSubviews from stackView
+    // remove all arrangedSubviews from stackView
     [[self.stackView arrangedSubviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     InlineTextView* content = [InlineTextView new];
     content.translatesAutoresizingMaskIntoConstraints = NO;
     [content buildFromBlockNode:self.node];
     [self.stackView addArrangedSubview:content];
-    
-    if ([self.node headingLevel] >= 1 && [self.node headingLevel] <= 2)
-    {
+
+    if ([self.node headingLevel] >= 1 && [self.node headingLevel] <= 2) {
         UIView* separator = [UIView new];
         [separator addConstraint:[separator.heightAnchor constraintEqualToConstant:16]];
         separator.backgroundColor = [UIColor clearColor];
         [self.stackView addArrangedSubview:separator];
-        
+
         UIView* separatorLine = [UIView new];
-        [separatorLine addConstraint:[separatorLine.heightAnchor constraintEqualToConstant:1/[UIScreen mainScreen].scale]];
+        [separatorLine addConstraint:[separatorLine.heightAnchor constraintEqualToConstant:1 / [UIScreen mainScreen].scale]];
         separatorLine.backgroundColor = [UIColor separatorColor];
         [self.stackView addArrangedSubview:separatorLine];
     }
-    
 }
 
 @end

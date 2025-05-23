@@ -9,10 +9,9 @@
 #import "NodeToViewManager.h"
 #import "UIImage+Ex.h"
 
-@interface OrderedListView()
-@property (nonatomic, strong) UIStackView *stackView;
+@interface OrderedListView ()
+@property (nonatomic, strong) UIStackView* stackView;
 @end
-
 
 @implementation OrderedListView
 
@@ -38,7 +37,6 @@
     ]];
 }
 
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -53,7 +51,7 @@
 {
 }
 
-- (void)setNode:(CMarkNode *)node
+- (void)setNode:(CMarkNode*)node
 {
     _node = node;
     [self updateUI];
@@ -61,11 +59,11 @@
 
 - (void)updateUI
 {
-    //remove all arrangedSubviews from stackView
+    // remove all arrangedSubviews from stackView
     [[self.stackView arrangedSubviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     NSInteger index = 0;
-    for (CMarkNode *child in [self.node children]) {
-        index ++;
+    for (CMarkNode* child in [self.node children]) {
+        index++;
         if ([[child nodeTypeName] isEqualToString:NodeTypeItem]) {
             UIStackView* itemStackView = [[UIStackView alloc] init];
             itemStackView.axis = UILayoutConstraintAxisHorizontal;
@@ -78,48 +76,47 @@
             indexLabel.font = indexFont;
             [indexLabel setContentHuggingPriority:UILayoutPriorityDefaultLow + 1 forAxis:UILayoutConstraintAxisHorizontal];
             [indexLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh + 1 forAxis:UILayoutConstraintAxisHorizontal];
-//            [itemStackView addArrangedSubview:imageView];
+            //            [itemStackView addArrangedSubview:imageView];
 
             UIView* view = [[NodeToViewManager sharedInstance] viewForNode:child];
-//            [itemStackView addArrangedSubview:view];
-            
+            //            [itemStackView addArrangedSubview:view];
+
             UIView* wrapperView = [UIView new];
             wrapperView.translatesAutoresizingMaskIntoConstraints = NO;
             [wrapperView addSubview:indexLabel];
             [wrapperView addSubview:view];
-           
+
             CGFloat lineHeight = [NodeToViewManager firstTextLineBaseOfView:view];
 
-            
-            if (lineHeight > 0)
-            {
+            if (lineHeight > 0) {
                 [wrapperView addConstraints:@[
                     [indexLabel.leadingAnchor constraintEqualToAnchor:wrapperView.leadingAnchor],
-                    [indexLabel.topAnchor constraintEqualToAnchor:wrapperView.topAnchor constant:lineHeight / 2 - [indexFont lineHeight] / 2],
+                    [indexLabel.topAnchor constraintEqualToAnchor:wrapperView.topAnchor
+                                                         constant:lineHeight / 2 - [indexFont lineHeight] / 2],
                     [view.topAnchor constraintEqualToAnchor:wrapperView.topAnchor],
-                    [view.leadingAnchor constraintEqualToAnchor:indexLabel.trailingAnchor constant:5],
+                    [view.leadingAnchor constraintEqualToAnchor:indexLabel.trailingAnchor
+                                                       constant:5],
                     [view.bottomAnchor constraintEqualToAnchor:wrapperView.bottomAnchor],
                     [view.trailingAnchor constraintEqualToAnchor:wrapperView.trailingAnchor],
-                    
+
                 ]];
-            }
-            else
-            {
+            } else {
                 [wrapperView addConstraints:@[
                     [indexLabel.leadingAnchor constraintEqualToAnchor:wrapperView.leadingAnchor],
-                    [indexLabel.topAnchor constraintEqualToAnchor:wrapperView.topAnchor constant:0],
+                    [indexLabel.topAnchor constraintEqualToAnchor:wrapperView.topAnchor
+                                                         constant:0],
                     [view.topAnchor constraintEqualToAnchor:wrapperView.topAnchor],
-                    [view.leadingAnchor constraintEqualToAnchor:indexLabel.trailingAnchor constant:5],
+                    [view.leadingAnchor constraintEqualToAnchor:indexLabel.trailingAnchor
+                                                       constant:5],
                     [view.bottomAnchor constraintEqualToAnchor:wrapperView.bottomAnchor],
                     [view.trailingAnchor constraintEqualToAnchor:wrapperView.trailingAnchor],
-                    
+
                 ]];
             }
-            
+
             [self.stackView addArrangedSubview:wrapperView];
         }
     }
-    
 }
 
 @end

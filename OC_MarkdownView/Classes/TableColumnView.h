@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TableColumnView : UIView
-@property(nonatomic,strong) NSArray<CMarkNode*>* nodes;
+@property (nonatomic, strong) NSArray<CMarkNode*>* nodes;
 @end
 
 NS_ASSUME_NONNULL_END
