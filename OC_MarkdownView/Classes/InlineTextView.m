@@ -297,6 +297,7 @@
                                                }
 
                                                NSLog(@"url clicked:%@", url);
+                                               [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
                                                return;
                                            }
                                        }];
