@@ -264,6 +264,8 @@
         NSString* url = [node nodeURL];
         [link addAttributes:@{ kURLInMarkDownKey : url } range:NSMakeRange(0, link.length)];
         [result appendAttributedString:link];
+    } else if ([[node nodeTypeName] isEqualToString:NodeTypeLineBreak]) {
+        [result appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
     }
 }
 
