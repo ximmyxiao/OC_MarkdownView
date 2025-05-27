@@ -22,6 +22,10 @@
 @end
 
 @implementation MVViewController
+- (void)dealloc
+{
+    NSLog(@"MVViewController dealloc");
+}
 
 - (void)testMK
 {
@@ -35,6 +39,68 @@
     self.viewModel = viewModel;
 }
 
+
+- (void)testSSE
+{
+    NSURL* url = [[NSBundle mainBundle] URLForResource:@"SSE" withExtension:@"txt"];
+    NSString* markdown = [[NSString alloc] initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    NSDictionary* dataDic  = [NSJSONSerialization JSONObjectWithData:[markdown dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+    
+    __block NSInteger i = 0;
+    __weak typeof(self) weakSelf = self;
+    
+    void (^processNextChunk)(void) = ^{
+        if (i < 10) {
+            NSString* eventType = dataDic[@"type"];
+            if ([eventType isKindOfClass:[NSString class]]) {
+                NSDictionary* payloadDic = dataDic[@"payload"];
+                if ([payloadDic isKindOfClass:[NSDictionary class]]) {
+                    if ([eventType isEqualToString:@"thought"]) {
+                        NSArray* procedures = payloadDic[@"procedures"];
+                        if ([procedures isKindOfClass:[NSArray class]]) {
+                            NSDictionary* procedureDic = [procedures firstObject];
+
+                            NSString* thought = procedureDic[@"debugging"][@"content"];
+                            weakSelf.thought = thought;
+                            //                        NSLog(@"thought: %@", thought);
+                        }
+                    } else if ([eventType isEqualToString:@"reply"]) {
+                        NSString* replyContent = payloadDic[@"content"];
+                        NSInteger wholeLength = [replyContent length];
+                        NSLog(@"processNextChunk wholeLength : %ld", wholeLength);
+                        NSInteger pageSize = ceil(wholeLength/10.0);
+                        // calculate the range for the current chunk
+                        NSRange range = NSMakeRange(0, i*pageSize + MIN(pageSize, wholeLength - i * pageSize));
+                        NSLog(@"processNextChunk range : %@", NSStringFromRange(range));
+                        weakSelf.reply = [replyContent substringWithRange:range];
+                        NSLog(@"processNextChunk reply content : %@", self.reply);
+                    }
+
+                    SSEContentViewModel* viewModel = [[SSEContentViewModel alloc] init];
+                    viewModel.thought = weakSelf.thought;
+                    viewModel.reply = weakSelf.reply;
+                    weakSelf.viewModel = viewModel;
+                }
+            }
+            i++;
+
+        }
+    };
+
+    // 创建 timer，每隔 0.5 秒触发一次
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.2 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        processNextChunk(); // 执行 block
+        
+        if (i >= 10) {
+            [timer invalidate]; // 调用 10 次后停止
+        }
+    }];
+    
+    [timer fire];
+        
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,8 +108,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"SSECell" bundle:nil] forCellReuseIdentifier:@"SSECell"];
     if ([self.markdownContentType isEqualToString:@"SSE"]) {
-        [self sendRequest];
-        [self testMK];
+        [self testSSE];
     } else {
         [self testMK];
     }
@@ -89,13 +154,15 @@
         NSDate* now = [NSDate date];
         NSTimeInterval timeSinceLastCall = [now timeIntervalSinceDate:self.lastCallTime];
 
-        if (timeSinceLastCall < threshold) {
-            return;
-        }
+//        if (timeSinceLastCall < threshold) {
+//            NSLog(@"processNextChunk reload is discard due to frequency limit");
+//            return;
+//        }
 
-        if (self.pendingBlock != nil) {
-            return;
-        }
+//        if (self.pendingBlock != nil) {
+//            NSLog(@"processNextChunk reload is discard");
+//            return;
+//        }
         _viewModel = viewModel;
 
         self.lastCallTime = now;
@@ -114,65 +181,6 @@
     } else {
         _viewModel = viewModel;
         [self.tableView reloadData];
-    }
-}
-- (void)sendRequest
-{
-    NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession* session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
-
-    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wss.lke.cloud.tencent.com/v1/qbot/chat/sse"]];
-    [request setAllHTTPHeaderFields:@{
-        @"Content-Type" : @"application/json",
-        @"Accept" : @"text/event-stream"
-    }];
-    NSData* postData = [[NSData alloc] initWithData:[@"{\n    \"content\": \"你可以回答哪些问题\",\n    \"bot_app_key\": \"yourkey\",\n    \"visitor_biz_id\": \"yourid\",\n    \"session_id\": \"test\"\n}" dataUsingEncoding:NSUTF8StringEncoding]];
-    [request setHTTPBody:postData];
-
-    [request setHTTPMethod:@"POST"];
-
-    NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:request];
-    [dataTask resume];
-}
-
-#pragma mark - NSURLSessionDataDelegate
-
-- (void)URLSession:(NSURLSession*)session dataTask:(NSURLSessionDataTask*)dataTask didReceiveData:(NSData*)data
-{
-    // 逐块追加数据
-    if (!self.receivedData) {
-        self.receivedData = [NSMutableData data];
-    }
-
-    [self.receivedData appendData:data];
-
-    NSString* receivedString = [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding];
-    NSArray* allResults = [receivedString componentsSeparatedByString:@"\n\n"];
-    if ([allResults count] > 3) {
-        NSString* secondlastResult = [allResults objectAtIndex:[allResults count] - 3];
-        NSArray* lines = [secondlastResult componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-        if ([lines count] >= 2) {
-            NSString* content = [lines objectAtIndex:1];
-            if ([content hasPrefix:@"data:"]) {
-                content = [content stringByReplacingCharactersInRange:NSMakeRange(0, 5) withString:@"\"data\":"];
-            }
-            NSString* jsonString = [NSString stringWithFormat:@"{%@}", content];
-            NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-            [self processJSON:json];
-        }
-    }
-}
-
-- (void)URLSession:(NSURLSession*)session task:(NSURLSessionTask*)task didCompleteWithError:(NSError*)error
-{
-    if (error) {
-        NSLog(@"Request failed: %@", error);
-    } else {
-        // 全部数据接收完成
-        NSString* receivedString = [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding];
-        NSLog(@"final string:%@", receivedString);
-        NSLog(@"Final data: %@", self.receivedData);
     }
 }
 

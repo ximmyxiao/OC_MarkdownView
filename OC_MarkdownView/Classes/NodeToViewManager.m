@@ -83,7 +83,7 @@
             BOOL isTaskList = NO;
 
             for (CMarkNode* child in [currentNode children]) {
-                NSLog(@"child node type: %@", [child nodeTypeName]);
+//                NSLog(@"child node type: %@", [child nodeTypeName]);
                 if ([[child nodeTypeName] isEqualToString:NodeTypeTaskListItem]) {
                     isTaskList = YES;
                     break;
