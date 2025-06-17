@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		004061E01742EF751CBC721CFC41EDD2 /* houdini_html_e.c in Sources */ = {isa = PBXBuildFile; fileRef = ACF4DC9F24B01EC33CF90643D39C0661 /* houdini_html_e.c */; };
+		0096AA542E01450A00D15415 /* MarkdownViewStyleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0096AA522E01450A00D15415 /* MarkdownViewStyleManager.h */; };
+		0096AA552E01450A00D15415 /* MarkdownViewStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0096AA532E01450A00D15415 /* MarkdownViewStyleManager.m */; };
 		0376E7E981B0DF8ACFB0AF04CD812B7A /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A38EBB1890789DF8AE1598E4E3A90C0 /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03E3939B2C9D0826A333EE037F60290C /* plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = E60F7AB51BAA04F9E2CD9175E85A54FB /* plugin.c */; };
 		0550BF23AF3D7AF31837DAB8CD563055 /* core-extensions.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F54E5E6AC7843B6F885BBE3EECA9918 /* core-extensions.c */; };
@@ -157,10 +159,12 @@
 
 /* Begin PBXFileReference section */
 		002BA3070B02E76DC9D9AC7A6F2B1EFE /* NodeType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NodeType.h; path = OC_MarkdownView/Classes/NodeType.h; sourceTree = "<group>"; };
+		0096AA522E01450A00D15415 /* MarkdownViewStyleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MarkdownViewStyleManager.h; path = OC_MarkdownView/Classes/MarkdownViewStyleManager.h; sourceTree = "<group>"; };
+		0096AA532E01450A00D15415 /* MarkdownViewStyleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MarkdownViewStyleManager.m; path = OC_MarkdownView/Classes/MarkdownViewStyleManager.m; sourceTree = "<group>"; };
 		0169BF4FEDC1BC14DB1450E3920EB38C /* OC_MarkdownView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OC_MarkdownView-dummy.m"; sourceTree = "<group>"; };
 		047652F856C4A7A5E12C4127AE21C8D5 /* references.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = references.h; path = Sources/libcmark_gfm/include/references.h; sourceTree = "<group>"; };
 		04E5349A3FD5B70CA8014D81993C0319 /* HeadingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HeadingView.h; path = OC_MarkdownView/Classes/HeadingView.h; sourceTree = "<group>"; };
-		06B55A8C76F1A9CAD59DCC5E8B9247C7 /* registry.c */ = {isa = PBXFileReference; includeInIndex = 1; name = registry.c; path = Sources/libcmark_gfm/registry.c; sourceTree = "<group>"; };
+		06B55A8C76F1A9CAD59DCC5E8B9247C7 /* registry.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = registry.c; path = Sources/libcmark_gfm/registry.c; sourceTree = "<group>"; };
 		09039837C7A4C2524ECE8F85BFF96443 /* cmark-gfm-extensions_export.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "cmark-gfm-extensions_export.h"; path = "Sources/libcmark_gfm/include/cmark-gfm-extensions_export.h"; sourceTree = "<group>"; };
 		09B7E9C28648F28FC26DDEC05C32ACC8 /* CodeBlockView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CodeBlockView.h; path = OC_MarkdownView/Classes/CodeBlockView.h; sourceTree = "<group>"; };
 		0A0E0B560D9E48765B9910343358F24A /* cmark-gfm-core-extensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "cmark-gfm-core-extensions.h"; path = "Sources/libcmark_gfm/include/cmark-gfm-core-extensions.h"; sourceTree = "<group>"; };
@@ -172,106 +176,106 @@
 		1735C267E51E46F12A63D7CA1A2D75E4 /* MarkdownView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MarkdownView.m; path = OC_MarkdownView/Classes/MarkdownView.m; sourceTree = "<group>"; };
 		174F25166A5D660F8F41D911EB700BED /* cmark-gfm_version.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "cmark-gfm_version.h"; path = "Sources/libcmark_gfm/include/cmark-gfm_version.h"; sourceTree = "<group>"; };
 		1B83234193DDE262BAD650C790C618B2 /* CodeBlockView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CodeBlockView.m; path = OC_MarkdownView/Classes/CodeBlockView.m; sourceTree = "<group>"; };
-		1F54E5E6AC7843B6F885BBE3EECA9918 /* core-extensions.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "core-extensions.c"; path = "Sources/libcmark_gfm/core-extensions.c"; sourceTree = "<group>"; };
+		1F54E5E6AC7843B6F885BBE3EECA9918 /* core-extensions.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "core-extensions.c"; path = "Sources/libcmark_gfm/core-extensions.c"; sourceTree = "<group>"; };
 		20ED100063165FBA553CF513C29A6311 /* inlines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = inlines.h; path = Sources/libcmark_gfm/include/inlines.h; sourceTree = "<group>"; };
 		25D059D0135F60152CB8D3434E55D574 /* OC_MarkdownView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OC_MarkdownView.modulemap; sourceTree = "<group>"; };
 		27C5F75138676FF7DE74D692374ECCEA /* OC_MarkdownView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OC_MarkdownView-umbrella.h"; sourceTree = "<group>"; };
-		2A1D08181452B1E8479E07A83321427A /* houdini_href_e.c */ = {isa = PBXFileReference; includeInIndex = 1; name = houdini_href_e.c; path = Sources/libcmark_gfm/houdini_href_e.c; sourceTree = "<group>"; };
+		2A1D08181452B1E8479E07A83321427A /* houdini_href_e.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = houdini_href_e.c; path = Sources/libcmark_gfm/houdini_href_e.c; sourceTree = "<group>"; };
 		2D8E071F86286ED3AE6974EE9FC7D43B /* libcmark_gfm-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "libcmark_gfm-umbrella.h"; sourceTree = "<group>"; };
-		2D947C83A8CB6F7B40CE6083E9239DC2 /* render.c */ = {isa = PBXFileReference; includeInIndex = 1; name = render.c; path = Sources/libcmark_gfm/render.c; sourceTree = "<group>"; };
-		2F0AF21412892F81982D41DF646A7835 /* footnotes.c */ = {isa = PBXFileReference; includeInIndex = 1; name = footnotes.c; path = Sources/libcmark_gfm/footnotes.c; sourceTree = "<group>"; };
+		2D947C83A8CB6F7B40CE6083E9239DC2 /* render.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = render.c; path = Sources/libcmark_gfm/render.c; sourceTree = "<group>"; };
+		2F0AF21412892F81982D41DF646A7835 /* footnotes.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = footnotes.c; path = Sources/libcmark_gfm/footnotes.c; sourceTree = "<group>"; };
 		301C47C9D65D0021BC77B8748C5D9453 /* UIColor+Ex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Ex.m"; path = "OC_MarkdownView/Classes/UIColor+Ex.m"; sourceTree = "<group>"; };
 		30B603970B6EB9D6C42221D624E060D1 /* UIImage+Ex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Ex.h"; path = "OC_MarkdownView/Classes/UIImage+Ex.h"; sourceTree = "<group>"; };
-		329199ED6C420E970D9E480422FC656A /* tagfilter.c */ = {isa = PBXFileReference; includeInIndex = 1; name = tagfilter.c; path = Sources/libcmark_gfm/tagfilter.c; sourceTree = "<group>"; };
+		329199ED6C420E970D9E480422FC656A /* tagfilter.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = tagfilter.c; path = Sources/libcmark_gfm/tagfilter.c; sourceTree = "<group>"; };
 		342E5BD30D113C9C2B6C094EB70B2C0E /* tasklist.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tasklist.h; path = Sources/libcmark_gfm/include/tasklist.h; sourceTree = "<group>"; };
-		34E4205951413517B8890E90F682620B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		34E4205951413517B8890E90F682620B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		35482E30A89D852746DEB99811F4A493 /* NodeToViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NodeToViewManager.m; path = OC_MarkdownView/Classes/NodeToViewManager.m; sourceTree = "<group>"; };
-		3757911478938DB7B961314543BEF57D /* scanners.c */ = {isa = PBXFileReference; includeInIndex = 1; name = scanners.c; path = Sources/libcmark_gfm/scanners.c; sourceTree = "<group>"; };
+		3757911478938DB7B961314543BEF57D /* scanners.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = scanners.c; path = Sources/libcmark_gfm/scanners.c; sourceTree = "<group>"; };
 		3A38EBB1890789DF8AE1598E4E3A90C0 /* config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config.h; path = Sources/libcmark_gfm/include/config.h; sourceTree = "<group>"; };
 		3ABB734D93D0FD76BB81D8974D5B24FE /* Pods-OC_MarkdownView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OC_MarkdownView_Example-dummy.m"; sourceTree = "<group>"; };
 		3C81F2FEB1A8770AF01A8BF0D72603E0 /* libcmark_gfm.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = libcmark_gfm.modulemap; sourceTree = "<group>"; };
 		3CC2910DBEDC6758D846ED112F40D8F2 /* QuoteView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuoteView.m; path = OC_MarkdownView/Classes/QuoteView.m; sourceTree = "<group>"; };
 		3E8F49DDA1EA29A5FF1676DE927CFA2B /* cmark-gfm-extension_api.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "cmark-gfm-extension_api.h"; path = "Sources/libcmark_gfm/include/cmark-gfm-extension_api.h"; sourceTree = "<group>"; };
 		40188B3A9BB2958BB5F680DFEF6F261A /* TableColumnView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TableColumnView.m; path = OC_MarkdownView/Classes/TableColumnView.m; sourceTree = "<group>"; };
-		44D5700A272026154B6B796D7225462A /* commonmark.c */ = {isa = PBXFileReference; includeInIndex = 1; name = commonmark.c; path = Sources/libcmark_gfm/commonmark.c; sourceTree = "<group>"; };
+		44D5700A272026154B6B796D7225462A /* commonmark.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = commonmark.c; path = Sources/libcmark_gfm/commonmark.c; sourceTree = "<group>"; };
 		4535115D7CA9253BE59D25B0CBCE2C82 /* node.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = node.h; path = Sources/libcmark_gfm/include/node.h; sourceTree = "<group>"; };
-		4698201ED74AA8D6AC6BCA85181D57ED /* html.c */ = {isa = PBXFileReference; includeInIndex = 1; name = html.c; path = Sources/libcmark_gfm/html.c; sourceTree = "<group>"; };
-		498F3B9FD8CB9C9225425AB7BD38E33D /* Pods-OC_MarkdownView_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-OC_MarkdownView_Example"; path = Pods_OC_MarkdownView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A1D9F93166D126931E8F2647282C333 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		4698201ED74AA8D6AC6BCA85181D57ED /* html.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = html.c; path = Sources/libcmark_gfm/html.c; sourceTree = "<group>"; };
+		498F3B9FD8CB9C9225425AB7BD38E33D /* Pods_OC_MarkdownView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OC_MarkdownView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A1D9F93166D126931E8F2647282C333 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A69680EDB0AAE5519B208CC64622BEB /* parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = parser.h; path = Sources/libcmark_gfm/include/parser.h; sourceTree = "<group>"; };
 		4E117BD021DF84589774C9038E89CC87 /* html.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = html.h; path = Sources/libcmark_gfm/include/html.h; sourceTree = "<group>"; };
 		4EA7A93C8B47F2F4ABB895A4B810C1EF /* autolink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = autolink.h; path = Sources/libcmark_gfm/include/autolink.h; sourceTree = "<group>"; };
-		5094445752B50CDD3E7F34270BA554A6 /* tasklist.c */ = {isa = PBXFileReference; includeInIndex = 1; name = tasklist.c; path = Sources/libcmark_gfm/tasklist.c; sourceTree = "<group>"; };
+		5094445752B50CDD3E7F34270BA554A6 /* tasklist.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = tasklist.c; path = Sources/libcmark_gfm/tasklist.c; sourceTree = "<group>"; };
 		50C4FA0DE68CC489D705CBF3DC416699 /* libcmark_gfm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libcmark_gfm.release.xcconfig; sourceTree = "<group>"; };
 		52B137771890EE79F13B823377A7130F /* Pods-OC_MarkdownView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OC_MarkdownView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		52CCFF158D432C607068985C17278E92 /* InlineTextStyleManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InlineTextStyleManager.h; path = OC_MarkdownView/Classes/InlineTextStyleManager.h; sourceTree = "<group>"; };
 		53DE9A04CE0C7167265A6B999530B8D8 /* Pods-OC_MarkdownView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OC_MarkdownView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		55EFD551D68DA59F7C32CC8B0B8CD177 /* TableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TableView.m; path = OC_MarkdownView/Classes/TableView.m; sourceTree = "<group>"; };
-		56BD059775F28B4301B46876ECE9A349 /* references.c */ = {isa = PBXFileReference; includeInIndex = 1; name = references.c; path = Sources/libcmark_gfm/references.c; sourceTree = "<group>"; };
+		56BD059775F28B4301B46876ECE9A349 /* references.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = references.c; path = Sources/libcmark_gfm/references.c; sourceTree = "<group>"; };
 		56C9EBC286CD33BE38CB97F4AEDE2058 /* libcmark_gfm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libcmark_gfm.debug.xcconfig; sourceTree = "<group>"; };
 		5A54C41CC72F0215B6631B41C7DBB708 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = OC_MarkdownView/Classes/ReplaceMe.m; sourceTree = "<group>"; };
 		5C70FFA9015D6C3CAC3C0FB730ED2BD3 /* Pods-OC_MarkdownView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OC_MarkdownView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5CA15029822E903B608003BF1061E5CB /* arena.c */ = {isa = PBXFileReference; includeInIndex = 1; name = arena.c; path = Sources/libcmark_gfm/arena.c; sourceTree = "<group>"; };
+		5CA15029822E903B608003BF1061E5CB /* arena.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = arena.c; path = Sources/libcmark_gfm/arena.c; sourceTree = "<group>"; };
 		5D66269297CAFD78B752A8352A4BFDAC /* strikethrough.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = strikethrough.h; path = Sources/libcmark_gfm/include/strikethrough.h; sourceTree = "<group>"; };
 		5DDE9606BCFF304A5E8CA9888068FA39 /* UIImage+Ex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Ex.m"; path = "OC_MarkdownView/Classes/UIImage+Ex.m"; sourceTree = "<group>"; };
 		5ED4ACEFD19944C832C6F9C468368855 /* chunk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = chunk.h; path = Sources/libcmark_gfm/include/chunk.h; sourceTree = "<group>"; };
-		5F7421083B16863C44CA725A38E57EEE /* strikethrough.c */ = {isa = PBXFileReference; includeInIndex = 1; name = strikethrough.c; path = Sources/libcmark_gfm/strikethrough.c; sourceTree = "<group>"; };
+		5F7421083B16863C44CA725A38E57EEE /* strikethrough.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = strikethrough.c; path = Sources/libcmark_gfm/strikethrough.c; sourceTree = "<group>"; };
 		5FE9C3E4EDEFC2E2E273C937DEB93BB5 /* OC_MarkdownView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "OC_MarkdownView-Info.plist"; sourceTree = "<group>"; };
 		60E377E84867D1A021BDD8C460993D42 /* table.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = table.h; path = Sources/libcmark_gfm/include/table.h; sourceTree = "<group>"; };
-		63422EB3BC1F61EC8FE8418201FE019C /* Pods-OC_MarkdownView_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-OC_MarkdownView_Tests"; path = Pods_OC_MarkdownView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63422EB3BC1F61EC8FE8418201FE019C /* Pods_OC_MarkdownView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OC_MarkdownView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63446C4927DF882B4B35AD4F8D12485B /* Pods-OC_MarkdownView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OC_MarkdownView_Tests-dummy.m"; sourceTree = "<group>"; };
 		63E89F37E937BEB100F62A8AFAF39313 /* InlineTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InlineTextView.h; path = OC_MarkdownView/Classes/InlineTextView.h; sourceTree = "<group>"; };
 		64C75FD6C90548478ACDAD0D943CAC47 /* OrderedListView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OrderedListView.m; path = OC_MarkdownView/Classes/OrderedListView.m; sourceTree = "<group>"; };
 		6524AC697EBB45D636FC0AA45187F0FE /* NodeType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NodeType.m; path = OC_MarkdownView/Classes/NodeType.m; sourceTree = "<group>"; };
-		673CB00E4A1A43E76C8CD5EF00E18098 /* iterator.c */ = {isa = PBXFileReference; includeInIndex = 1; name = iterator.c; path = Sources/libcmark_gfm/iterator.c; sourceTree = "<group>"; };
-		67BD404E84846599E07820453AE9A9B4 /* node.c */ = {isa = PBXFileReference; includeInIndex = 1; name = node.c; path = Sources/libcmark_gfm/node.c; sourceTree = "<group>"; };
+		673CB00E4A1A43E76C8CD5EF00E18098 /* iterator.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = iterator.c; path = Sources/libcmark_gfm/iterator.c; sourceTree = "<group>"; };
+		67BD404E84846599E07820453AE9A9B4 /* node.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = node.c; path = Sources/libcmark_gfm/node.c; sourceTree = "<group>"; };
 		6F526FC25F69D6FC061DF32D955AD6DD /* map.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = map.h; path = Sources/libcmark_gfm/include/map.h; sourceTree = "<group>"; };
 		6FD562C26840DDBCE8CA988826616F85 /* Pods-OC_MarkdownView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OC_MarkdownView_Example.modulemap"; sourceTree = "<group>"; };
-		71B446DAD2BE77DA8456A083A68FBA7B /* xml.c */ = {isa = PBXFileReference; includeInIndex = 1; name = xml.c; path = Sources/libcmark_gfm/xml.c; sourceTree = "<group>"; };
+		71B446DAD2BE77DA8456A083A68FBA7B /* xml.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = xml.c; path = Sources/libcmark_gfm/xml.c; sourceTree = "<group>"; };
 		7660D2E41D6FF58741F4A9C49AE3A506 /* ParagrahView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ParagrahView.m; path = OC_MarkdownView/Classes/ParagrahView.m; sourceTree = "<group>"; };
 		7969CE74B7A004F5BC4E6E6DD7F57DF4 /* plugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = plugin.h; path = Sources/libcmark_gfm/include/plugin.h; sourceTree = "<group>"; };
 		7ACD87BAD6BA1907D463A55076A8F370 /* CMarkNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CMarkNode.m; path = OC_MarkdownView/Classes/CMarkNode.m; sourceTree = "<group>"; };
-		7ED4E357836B70BFAD07F2108A547CD5 /* linked_list.c */ = {isa = PBXFileReference; includeInIndex = 1; name = linked_list.c; path = Sources/libcmark_gfm/linked_list.c; sourceTree = "<group>"; };
+		7ED4E357836B70BFAD07F2108A547CD5 /* linked_list.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = linked_list.c; path = Sources/libcmark_gfm/linked_list.c; sourceTree = "<group>"; };
 		7FCE1E1921325F1E81C4DF0F0E8DB251 /* libcmark_gfm-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "libcmark_gfm-dummy.m"; sourceTree = "<group>"; };
 		8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		822EEB0050CF2963BFEB0F1EF629E1B9 /* UIColor+Ex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Ex.h"; path = "OC_MarkdownView/Classes/UIColor+Ex.h"; sourceTree = "<group>"; };
 		853DC102CBC326DE8C9F41230BC8B430 /* Pods-OC_MarkdownView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OC_MarkdownView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		8584BA68FF667B30F80CDF04592E16F9 /* inlines.c */ = {isa = PBXFileReference; includeInIndex = 1; name = inlines.c; path = Sources/libcmark_gfm/inlines.c; sourceTree = "<group>"; };
+		8584BA68FF667B30F80CDF04592E16F9 /* inlines.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = inlines.c; path = Sources/libcmark_gfm/inlines.c; sourceTree = "<group>"; };
 		86DD31B2881A95EEB279EAB84E0BBD3B /* CMarkNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CMarkNode.h; path = OC_MarkdownView/Classes/CMarkNode.h; sourceTree = "<group>"; };
 		87EEBA6C3E2CB859463CD24B0F41E476 /* BulletedListView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BulletedListView.m; path = OC_MarkdownView/Classes/BulletedListView.m; sourceTree = "<group>"; };
-		8808D193E78665A02731B567A6D7FD80 /* autolink.c */ = {isa = PBXFileReference; includeInIndex = 1; name = autolink.c; path = Sources/libcmark_gfm/autolink.c; sourceTree = "<group>"; };
+		8808D193E78665A02731B567A6D7FD80 /* autolink.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = autolink.c; path = Sources/libcmark_gfm/autolink.c; sourceTree = "<group>"; };
 		883E2FC5D7731017E2C550B60685CF7C /* InlineTextStyleManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = InlineTextStyleManager.m; path = OC_MarkdownView/Classes/InlineTextStyleManager.m; sourceTree = "<group>"; };
-		8D85BD4135B7AC045E49CA98A94348F1 /* buffer.c */ = {isa = PBXFileReference; includeInIndex = 1; name = buffer.c; path = Sources/libcmark_gfm/buffer.c; sourceTree = "<group>"; };
+		8D85BD4135B7AC045E49CA98A94348F1 /* buffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = buffer.c; path = Sources/libcmark_gfm/buffer.c; sourceTree = "<group>"; };
 		8E7C20942AA7D6E95D58B0884EEBA316 /* OC_MarkdownView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OC_MarkdownView-prefix.pch"; sourceTree = "<group>"; };
-		902F07DD60EF1F6FCE95E45D867E458A /* houdini_html_u.c */ = {isa = PBXFileReference; includeInIndex = 1; name = houdini_html_u.c; path = Sources/libcmark_gfm/houdini_html_u.c; sourceTree = "<group>"; };
+		902F07DD60EF1F6FCE95E45D867E458A /* houdini_html_u.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = houdini_html_u.c; path = Sources/libcmark_gfm/houdini_html_u.c; sourceTree = "<group>"; };
 		92D7DEF174E1F63E278062A4B1780246 /* TaskListView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TaskListView.m; path = OC_MarkdownView/Classes/TaskListView.m; sourceTree = "<group>"; };
-		9A51A7F472C2DCF3848ECD3ECB6A220B /* latex.c */ = {isa = PBXFileReference; includeInIndex = 1; name = latex.c; path = Sources/libcmark_gfm/latex.c; sourceTree = "<group>"; };
-		9AF94417DBA78689521D5B9B7C742A97 /* table.c */ = {isa = PBXFileReference; includeInIndex = 1; name = table.c; path = Sources/libcmark_gfm/table.c; sourceTree = "<group>"; };
+		9A51A7F472C2DCF3848ECD3ECB6A220B /* latex.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = latex.c; path = Sources/libcmark_gfm/latex.c; sourceTree = "<group>"; };
+		9AF94417DBA78689521D5B9B7C742A97 /* table.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = table.c; path = Sources/libcmark_gfm/table.c; sourceTree = "<group>"; };
 		9B5FD19D9B1670066F5BD7DFF7049819 /* TableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TableView.h; path = OC_MarkdownView/Classes/TableView.h; sourceTree = "<group>"; };
-		9B6E1E673C743448E9DE7C47BF8DD569 /* blocks.c */ = {isa = PBXFileReference; includeInIndex = 1; name = blocks.c; path = Sources/libcmark_gfm/blocks.c; sourceTree = "<group>"; };
+		9B6E1E673C743448E9DE7C47BF8DD569 /* blocks.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = blocks.c; path = Sources/libcmark_gfm/blocks.c; sourceTree = "<group>"; };
 		9C2DED5072D5C04089F689F4948F9E2C /* Pods-OC_MarkdownView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OC_MarkdownView_Example-Info.plist"; sourceTree = "<group>"; };
-		9CD600872BB845CE57799F01852BB6D4 /* cmark.c */ = {isa = PBXFileReference; includeInIndex = 1; name = cmark.c; path = Sources/libcmark_gfm/cmark.c; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9CD600872BB845CE57799F01852BB6D4 /* cmark.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = cmark.c; path = Sources/libcmark_gfm/cmark.c; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E986A730B70737FC984858561A5778B /* utf8.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = utf8.h; path = Sources/libcmark_gfm/include/utf8.h; sourceTree = "<group>"; };
 		9ECBABF32E4D58885DF053362FD4167C /* libcmark_gfm-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "libcmark_gfm-prefix.pch"; sourceTree = "<group>"; };
-		A097CA957B4173EC58B3D8A288B2E8A4 /* map.c */ = {isa = PBXFileReference; includeInIndex = 1; name = map.c; path = Sources/libcmark_gfm/map.c; sourceTree = "<group>"; };
+		A097CA957B4173EC58B3D8A288B2E8A4 /* map.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = map.c; path = Sources/libcmark_gfm/map.c; sourceTree = "<group>"; };
 		A0989C9D6475EC88A15A83B33CEC2CCD /* NodeToViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NodeToViewManager.h; path = OC_MarkdownView/Classes/NodeToViewManager.h; sourceTree = "<group>"; };
 		A22C7CBE23AA155974892A2008FFE052 /* HeadingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HeadingView.m; path = OC_MarkdownView/Classes/HeadingView.m; sourceTree = "<group>"; };
 		A43BA4D90957CEA0A9B4A9C66594EC67 /* OC_MarkdownView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OC_MarkdownView.release.xcconfig; sourceTree = "<group>"; };
 		A6C2A60CB35E5BD36CDF6E4A2F68A7C8 /* OC_MarkdownView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OC_MarkdownView.debug.xcconfig; sourceTree = "<group>"; };
-		A6F819540CE454AEB7603CB6B9E6DFA2 /* syntax_extension.c */ = {isa = PBXFileReference; includeInIndex = 1; name = syntax_extension.c; path = Sources/libcmark_gfm/syntax_extension.c; sourceTree = "<group>"; };
+		A6F819540CE454AEB7603CB6B9E6DFA2 /* syntax_extension.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = syntax_extension.c; path = Sources/libcmark_gfm/syntax_extension.c; sourceTree = "<group>"; };
 		AC91A53BFED4E0409110E18E801AE400 /* Pods-OC_MarkdownView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OC_MarkdownView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		ACF4DC9F24B01EC33CF90643D39C0661 /* houdini_html_e.c */ = {isa = PBXFileReference; includeInIndex = 1; name = houdini_html_e.c; path = Sources/libcmark_gfm/houdini_html_e.c; sourceTree = "<group>"; };
+		ACF4DC9F24B01EC33CF90643D39C0661 /* houdini_html_e.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = houdini_html_e.c; path = Sources/libcmark_gfm/houdini_html_e.c; sourceTree = "<group>"; };
 		AEB18DDC4B8D5AD7B68D468E2D96637A /* tagfilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tagfilter.h; path = Sources/libcmark_gfm/include/tagfilter.h; sourceTree = "<group>"; };
 		B30E5574806CE3F8B422D5FD835DF774 /* MarkdownView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MarkdownView.h; path = OC_MarkdownView/Classes/MarkdownView.h; sourceTree = "<group>"; };
-		B714B432C263EADB1C9347CA3ACF6097 /* OC_MarkdownView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = OC_MarkdownView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B714B432C263EADB1C9347CA3ACF6097 /* OC_MarkdownView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = OC_MarkdownView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B849BB7C0F2EBA57E9694846BDFDC344 /* Pods-OC_MarkdownView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OC_MarkdownView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		B9BCA655904BFA4FF88EE6038230C13E /* MarkdownViewHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MarkdownViewHeader.h; path = OC_MarkdownView/Classes/MarkdownViewHeader.h; sourceTree = "<group>"; };
-		C13A9388795F29563A9361F66F022F50 /* plaintext.c */ = {isa = PBXFileReference; includeInIndex = 1; name = plaintext.c; path = Sources/libcmark_gfm/plaintext.c; sourceTree = "<group>"; };
+		C13A9388795F29563A9361F66F022F50 /* plaintext.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = plaintext.c; path = Sources/libcmark_gfm/plaintext.c; sourceTree = "<group>"; };
 		C23174D38197D2E5E4E3634D71BE3F71 /* Pods-OC_MarkdownView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OC_MarkdownView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		C29C0A9A633AC73C6CD56DB8BD16D306 /* cmark_ctype.c */ = {isa = PBXFileReference; includeInIndex = 1; name = cmark_ctype.c; path = Sources/libcmark_gfm/cmark_ctype.c; sourceTree = "<group>"; };
+		C29C0A9A633AC73C6CD56DB8BD16D306 /* cmark_ctype.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = cmark_ctype.c; path = Sources/libcmark_gfm/cmark_ctype.c; sourceTree = "<group>"; };
 		C4271717C2B45ABF106D3E620958506E /* buffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = buffer.h; path = Sources/libcmark_gfm/include/buffer.h; sourceTree = "<group>"; };
-		C62003AFA7C6FAEC5DDBDAFD87B9F891 /* ext_scanners.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ext_scanners.c; path = Sources/libcmark_gfm/ext_scanners.c; sourceTree = "<group>"; };
+		C62003AFA7C6FAEC5DDBDAFD87B9F891 /* ext_scanners.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ext_scanners.c; path = Sources/libcmark_gfm/ext_scanners.c; sourceTree = "<group>"; };
 		CFD63FA601ACE5569F79A6678749DCD6 /* ext_scanners.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ext_scanners.h; path = Sources/libcmark_gfm/include/ext_scanners.h; sourceTree = "<group>"; };
 		D526BD533077B3A97DA7A542A3ADAAC3 /* syntax_extension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = syntax_extension.h; path = Sources/libcmark_gfm/include/syntax_extension.h; sourceTree = "<group>"; };
 		D6296C02B6898610F72ACBC514C56698 /* BulletedListView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BulletedListView.h; path = OC_MarkdownView/Classes/BulletedListView.h; sourceTree = "<group>"; };
@@ -280,12 +284,12 @@
 		DA27EE615A58BC66D867E3C2B7587101 /* cmark-gfm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "cmark-gfm.h"; path = "Sources/libcmark_gfm/include/cmark-gfm.h"; sourceTree = "<group>"; };
 		DB83F74BF2CC6DCA426E8E1914089DF2 /* ParagrahView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ParagrahView.h; path = OC_MarkdownView/Classes/ParagrahView.h; sourceTree = "<group>"; };
 		DBF70050B1AA90C03FD50059C99344E8 /* Pods-OC_MarkdownView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OC_MarkdownView_Tests.modulemap"; sourceTree = "<group>"; };
-		DD08401D54514C3226060ACDF7CD3AB7 /* man.c */ = {isa = PBXFileReference; includeInIndex = 1; name = man.c; path = Sources/libcmark_gfm/man.c; sourceTree = "<group>"; };
+		DD08401D54514C3226060ACDF7CD3AB7 /* man.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = man.c; path = Sources/libcmark_gfm/man.c; sourceTree = "<group>"; };
 		E136502926451751C4F70AA968FFA677 /* Pods-OC_MarkdownView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OC_MarkdownView_Tests-Info.plist"; sourceTree = "<group>"; };
 		E2DA24FEA9832064E1BD6928C0B6F991 /* Pods-OC_MarkdownView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OC_MarkdownView_Example-umbrella.h"; sourceTree = "<group>"; };
 		E4EB620DA9641983A7C237481BF122FC /* Pods-OC_MarkdownView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OC_MarkdownView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		E580A34BE56148AEF847BA71B3E38047 /* QuoteView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuoteView.h; path = OC_MarkdownView/Classes/QuoteView.h; sourceTree = "<group>"; };
-		E60F7AB51BAA04F9E2CD9175E85A54FB /* plugin.c */ = {isa = PBXFileReference; includeInIndex = 1; name = plugin.c; path = Sources/libcmark_gfm/plugin.c; sourceTree = "<group>"; };
+		E60F7AB51BAA04F9E2CD9175E85A54FB /* plugin.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = plugin.c; path = Sources/libcmark_gfm/plugin.c; sourceTree = "<group>"; };
 		E7D197D9E1F7A3C093E54B2D36A4AC81 /* libcmark_gfm-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "libcmark_gfm-Info.plist"; sourceTree = "<group>"; };
 		E875EBD2F8FA9E204756275512F4C436 /* render.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = render.h; path = Sources/libcmark_gfm/include/render.h; sourceTree = "<group>"; };
 		E9115D46F29E71A04AB333F83C1D3A6B /* Pods-OC_MarkdownView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OC_MarkdownView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -293,10 +297,10 @@
 		ECF4CA3AF5536D14B4E015504E7AEEC0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		F1350CA49477BFCABFCD0749041FAA94 /* TaskListView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TaskListView.h; path = OC_MarkdownView/Classes/TaskListView.h; sourceTree = "<group>"; };
 		F2655F9213A48485B6013D4364DE414F /* Pods-OC_MarkdownView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OC_MarkdownView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		F46C636A9A0D66BEFD4B95383F4C3C43 /* libcmark_gfm */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = libcmark_gfm; path = libcmark_gfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46C636A9A0D66BEFD4B95383F4C3C43 /* libcmark_gfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libcmark_gfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F489D23CFDFB2FC3D01069FF938A2584 /* iterator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iterator.h; path = Sources/libcmark_gfm/include/iterator.h; sourceTree = "<group>"; };
-		F7C0AA82DFD57A7898889E508544C250 /* OC_MarkdownView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OC_MarkdownView; path = OC_MarkdownView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9FEC5CBA3C4968FCB36B6E0438C9BD0 /* utf8.c */ = {isa = PBXFileReference; includeInIndex = 1; name = utf8.c; path = Sources/libcmark_gfm/utf8.c; sourceTree = "<group>"; };
+		F7C0AA82DFD57A7898889E508544C250 /* OC_MarkdownView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OC_MarkdownView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9FEC5CBA3C4968FCB36B6E0438C9BD0 /* utf8.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = utf8.c; path = Sources/libcmark_gfm/utf8.c; sourceTree = "<group>"; };
 		FD809D90DBCCB4DD0396A99D05229169 /* houdini.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = houdini.h; path = Sources/libcmark_gfm/include/houdini.h; sourceTree = "<group>"; };
 		FF7ED62B9891E64971CD9BDAE965C2FB /* libcmark_gfm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = libcmark_gfm.h; path = Sources/libcmark_gfm/include/libcmark_gfm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,10 +370,10 @@
 		4151A8487EA2BCDBF6BF7867514162A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F46C636A9A0D66BEFD4B95383F4C3C43 /* libcmark_gfm */,
-				F7C0AA82DFD57A7898889E508544C250 /* OC_MarkdownView */,
-				498F3B9FD8CB9C9225425AB7BD38E33D /* Pods-OC_MarkdownView_Example */,
-				63422EB3BC1F61EC8FE8418201FE019C /* Pods-OC_MarkdownView_Tests */,
+				F46C636A9A0D66BEFD4B95383F4C3C43 /* libcmark_gfm.framework */,
+				F7C0AA82DFD57A7898889E508544C250 /* OC_MarkdownView.framework */,
+				498F3B9FD8CB9C9225425AB7BD38E33D /* Pods_OC_MarkdownView_Example.framework */,
+				63422EB3BC1F61EC8FE8418201FE019C /* Pods_OC_MarkdownView_Tests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -460,7 +464,6 @@
 				71B446DAD2BE77DA8456A083A68FBA7B /* xml.c */,
 				9AFBF34F2BA54766A6FD27802AC562B8 /* Support Files */,
 			);
-			name = libcmark_gfm;
 			path = libcmark_gfm;
 			sourceTree = "<group>";
 		};
@@ -546,6 +549,8 @@
 				5DDE9606BCFF304A5E8CA9888068FA39 /* UIImage+Ex.m */,
 				A3BE123080DA4ADCF437C40FDA91F589 /* Pod */,
 				76C04025BAFED3AE738F9AE9944AACA7 /* Support Files */,
+				0096AA522E01450A00D15415 /* MarkdownViewStyleManager.h */,
+				0096AA532E01450A00D15415 /* MarkdownViewStyleManager.m */,
 			);
 			name = OC_MarkdownView;
 			path = ../..;
@@ -662,6 +667,7 @@
 				A4A9A54A92565E4890C55252E46838CE /* MarkdownViewHeader.h in Headers */,
 				B14512865C6B55C20D746DA8C5FBA3A0 /* NodeToViewManager.h in Headers */,
 				A6201F702442FD8207AC106FCA92BD37 /* NodeType.h in Headers */,
+				0096AA542E01450A00D15415 /* MarkdownViewStyleManager.h in Headers */,
 				65B5A5E108435516349F8D8625018E76 /* OC_MarkdownView-umbrella.h in Headers */,
 				359258CBB732632F01846088FF8E9729 /* OrderedListView.h in Headers */,
 				920141F19B6211B965D68B42CF89B23C /* ParagrahView.h in Headers */,
@@ -702,7 +708,7 @@
 			);
 			name = "Pods-OC_MarkdownView_Example";
 			productName = Pods_OC_MarkdownView_Example;
-			productReference = 498F3B9FD8CB9C9225425AB7BD38E33D /* Pods-OC_MarkdownView_Example */;
+			productReference = 498F3B9FD8CB9C9225425AB7BD38E33D /* Pods_OC_MarkdownView_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		46DE5795C9E08D3C5E6200A1112FA06D /* OC_MarkdownView */ = {
@@ -721,7 +727,7 @@
 			);
 			name = OC_MarkdownView;
 			productName = OC_MarkdownView;
-			productReference = F7C0AA82DFD57A7898889E508544C250 /* OC_MarkdownView */;
+			productReference = F7C0AA82DFD57A7898889E508544C250 /* OC_MarkdownView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BD4C5DAE4530FC05436790CD128B2C6B /* Pods-OC_MarkdownView_Tests */ = {
@@ -740,7 +746,7 @@
 			);
 			name = "Pods-OC_MarkdownView_Tests";
 			productName = Pods_OC_MarkdownView_Tests;
-			productReference = 63422EB3BC1F61EC8FE8418201FE019C /* Pods-OC_MarkdownView_Tests */;
+			productReference = 63422EB3BC1F61EC8FE8418201FE019C /* Pods_OC_MarkdownView_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F6BA5C244B7A82E8941E99031770A235 /* libcmark_gfm */ = {
@@ -758,7 +764,7 @@
 			);
 			name = libcmark_gfm;
 			productName = libcmark_gfm;
-			productReference = F46C636A9A0D66BEFD4B95383F4C3C43 /* libcmark_gfm */;
+			productReference = F46C636A9A0D66BEFD4B95383F4C3C43 /* libcmark_gfm.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -779,8 +785,6 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			minimizedProjectReferenceProxies = 0;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 4151A8487EA2BCDBF6BF7867514162A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -860,6 +864,7 @@
 				0BE902C00E2E7EE3137932549E5E83E7 /* QuoteView.m in Sources */,
 				D3B1264879AEF0EC6EFBDDED8708FD99 /* ReplaceMe.m in Sources */,
 				B81B3B4E441F3C0FE5F3DEFEF91D324B /* TableColumnView.m in Sources */,
+				0096AA552E01450A00D15415 /* MarkdownViewStyleManager.m in Sources */,
 				51ECB18D8E9F54D023A8C2A1470D0E16 /* TableView.m in Sources */,
 				F4458AF4148E601EF5B3018ECBD28C5F /* TaskListView.m in Sources */,
 				54EB4BEDF938DA51E894396F58FBDA6A /* UIColor+Ex.m in Sources */,
@@ -1065,8 +1070,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

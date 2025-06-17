@@ -6,6 +6,7 @@
 //
 
 #import "CodeBlockView.h"
+#import "MarkdownViewStyleManager.h"
 
 @interface CodeBlockView ()
 @property (nonatomic, strong) UIStackView* stackView;
@@ -108,9 +109,9 @@
 {
 
     NSMutableParagraphStyle* psDefault = [NSMutableParagraphStyle new];
-    psDefault.lineSpacing = 0.225 * 17;
+    psDefault.lineSpacing = [MarkdownViewStyleManager sharedInstance].codeBlockLineSpacing;
     NSDictionary* attributes = @{
-        NSFontAttributeName : [UIFont systemFontOfSize:ceil(17 * 0.85)],
+        NSFontAttributeName : [UIFont systemFontOfSize:ceilf([MarkdownViewStyleManager sharedInstance].codeBlockFontSize)],
         NSParagraphStyleAttributeName : psDefault,
     };
     return attributes;
