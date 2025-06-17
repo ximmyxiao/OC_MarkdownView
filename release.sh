@@ -88,8 +88,8 @@ git commit -m "$VERSION" || {
 }
 
 echo "🚀 Pushing to remote..."
-git push || {
-    echo "❌ git push failed"
+git push origin || {
+    echo "❌ git push origin failed"
     mv "$BACKUP_FILE" "$PODSPEC_FILE"
     exit 1
 }
