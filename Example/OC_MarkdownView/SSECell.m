@@ -20,6 +20,8 @@
 {
     [super awakeFromNib];
     // Initialization code
+    [self.thoughtLabel setContentHuggingPriority:249 forAxis:UILayoutConstraintAxisVertical];
+
     self.thoughtLabel.numberOfLines = 0;
     self.thoughtLabel.backgroundColor = [UIColor grayColor];
 }
