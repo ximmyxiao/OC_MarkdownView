@@ -16,7 +16,6 @@
 @property (nonatomic, assign) NSInteger currentListItemNumber;
 @property (nonatomic, strong) CMarkNode* markdownNode;
 @property (nonatomic, assign) CGSize layoutSize;
-@property (nonatomic, assign) BOOL isBoundsSet;
 @end
 
 @implementation MarkdownView
@@ -59,8 +58,6 @@
 }
 - (void)setBounds:(CGRect)bounds
 {
-    self.isBoundsSet = YES;
-
     if (!CGSizeEqualToSize(self.bounds.size, bounds.size)) {
         //        NSLog(@"original bounds:%@,new bounds:%@",NSStringFromCGRect(self.bounds),NSStringFromCGRect(bounds));
         [super setBounds:bounds];
@@ -111,34 +108,21 @@
 
 - (void)relayoutSize
 {
-    if (self.isBoundsSet == YES)
-    {
-        NSLog(@"resetLayoutSize self size :%@", NSStringFromCGSize(self.bounds.size));
+    NSLog(@"resetLayoutSize self size :%@", NSStringFromCGSize(self.bounds.size));
 
-        UIView* view2 = [[NodeToViewManager sharedInstance] viewForNode:self.markdownNode];
+    UIView* view2 = [[NodeToViewManager sharedInstance] viewForNode:self.markdownNode];
 
-        [view2 addConstraints:@[ [view2.widthAnchor constraintEqualToConstant:self.bounds.size.width] ]];
-        view2.bounds = self.bounds;
-        [view2 layoutIfNeeded];
-        CGSize size = [view2 systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-        NSLog(@"print constraints:%@", [view2 constraintsAffectingLayoutForAxis:1]);
-        NSLog(@"resetLayoutSize oldsize :%@", NSStringFromCGSize(size));
+    [view2 addConstraints:@[ [view2.widthAnchor constraintEqualToConstant:self.bounds.size.width] ]];
+    view2.bounds = self.bounds;
+    [view2 layoutIfNeeded];
+    CGSize size = [view2 systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    NSLog(@"print constraints:%@", [view2 constraintsAffectingLayoutForAxis:1]);
+    NSLog(@"resetLayoutSize oldsize :%@", NSStringFromCGSize(size));
 
-        self.layoutSize = [view2 systemLayoutSizeFittingSize:CGSizeMake(view2.bounds.size.width, 0) withHorizontalFittingPriority:UILayoutPriorityRequired verticalFittingPriority:UILayoutPriorityFittingSizeLevel];
-        NSLog(@"resetLayoutSize :%@", NSStringFromCGSize(self.layoutSize));
-        [self invalidateIntrinsicContentSize];
-    }
-    else
-    {
-        self.layoutSize = CGSizeMake(UIViewNoIntrinsicMetric, UIViewNoIntrinsicMetric);
-    }
-
+    self.layoutSize = [view2 systemLayoutSizeFittingSize:CGSizeMake(view2.bounds.size.width, 0) withHorizontalFittingPriority:UILayoutPriorityRequired verticalFittingPriority:UILayoutPriorityFittingSizeLevel];
+    NSLog(@"resetLayoutSize :%@", NSStringFromCGSize(self.layoutSize));
+    [self invalidateIntrinsicContentSize];
 }
-
-
-/*
- Returning (-1, -1) fix the bug when the initial intrinsic size is incorrect (because the view's size is not set by the layout system, but rather by the XIB's size,so the layoutSize is not the correct size). The layout system uses this incorrect size as the cell's constraint for subsequent layouts. Returning (-1, -1) ensures that this incorrect value does not affect the layout constraints.  For example, if you create an invalid constraint with a height of 50, there will be a constraint like "height >= 50 @750". This constraint will influence the layout calculations.  However, if you set it to "height >= -1 @750", this constraint will still be part of the constraint equations group but will not have any actual effect. The layout system will use  other constraints to calculate the correct size.
- */
 
 - (CGSize)intrinsicContentSize
 {
