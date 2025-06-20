@@ -38,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) CGFloat quoteMarkerWidth;
 @property(nonatomic,assign) CGFloat quoteMarkerSpacing;
 
+@property(nonatomic,assign) CGFloat tableBorderWidth;
+@property(nonatomic,assign) CGFloat tableCornerRadius;
+@property(nonatomic,strong) UIColor* tableBorderColor;
+@property(nonatomic,assign) UIEdgeInsets tableColumnContentEdgeInsets;
+
 @end
 
 NS_ASSUME_NONNULL_END

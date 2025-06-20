@@ -59,5 +59,11 @@
     self.quoteMarkerCornerRadius = 5;
     self.quoteMarkerWidth = 4;
     
+    self.tableBorderWidth = 1;
+    self.tableCornerRadius = 5;
+    self.tableBorderColor = UIColorFromRGB(0xe4e4e8);
+    self.tableColumnContentEdgeInsets = UIEdgeInsetsMake(6, 13, 13, 6);
+
+    
 }
 @end

@@ -7,6 +7,7 @@
 
 #import "TableColumnView.h"
 #import "InlineTextView.h"
+#import "MarkdownViewStyleManager.h"
 
 @interface TableColumnView ()
 @property (nonatomic, strong) UIStackView* stackView;
@@ -67,7 +68,7 @@
             UIView* separator = [UIView new];
             separator.translatesAutoresizingMaskIntoConstraints = NO;
             separator.backgroundColor = [UIColor borderColor];
-            [separator addConstraint:[separator.heightAnchor constraintEqualToConstant:.5]];
+            [separator addConstraint:[separator.heightAnchor constraintEqualToConstant:[MarkdownViewStyleManager sharedInstance].tableBorderWidth]];
             [self.stackView addArrangedSubview:separator];
         }
 
@@ -82,16 +83,17 @@
             wrapperView.backgroundColor = [UIColor clearColor];
             [wrapperView addSubview:lineView];
 
+            UIEdgeInsets contentInsets = [MarkdownViewStyleManager sharedInstance].tableColumnContentEdgeInsets;
             [wrapperView addConstraints:@[
 
                 [lineView.topAnchor constraintEqualToAnchor:wrapperView.topAnchor
-                                                   constant:6],
+                                                   constant:contentInsets.top],
                 [lineView.leadingAnchor constraintEqualToAnchor:wrapperView.leadingAnchor
-                                                       constant:13],
+                                                       constant:contentInsets.left],
                 [wrapperView.trailingAnchor constraintEqualToAnchor:lineView.trailingAnchor
-                                                           constant:13],
+                                                           constant:contentInsets.right],
                 [wrapperView.bottomAnchor constraintEqualToAnchor:lineView.bottomAnchor
-                                                         constant:6]
+                                                         constant:contentInsets.bottom]
             ]];
             [self.stackView addArrangedSubview:wrapperView];
             isFirstNode = NO;

@@ -7,6 +7,7 @@
 
 #import "TableView.h"
 #import "TableColumnView.h"
+#import "MarkdownViewStyleManager.h"
 
 @interface TableView ()
 @property (nonatomic, strong) UIStackView* stackView;
@@ -17,10 +18,10 @@
 
 - (void)constructUI
 {
-    UIColor* borderColor = UIColorFromRGB(0xe4e4e8);
+    UIColor* borderColor = [MarkdownViewStyleManager sharedInstance].tableBorderColor;
     self.layer.borderColor = borderColor.CGColor;
-    self.layer.borderWidth = 1;
-    self.layer.cornerRadius = 5;
+    self.layer.borderWidth = [MarkdownViewStyleManager sharedInstance].tableBorderWidth;
+    self.layer.cornerRadius = [MarkdownViewStyleManager sharedInstance].tableCornerRadius;
     self.layer.masksToBounds = YES;
 
     [self.scrollView removeFromSuperview];
@@ -83,7 +84,7 @@
                     UIView* separator = [UIView new];
                     separator.translatesAutoresizingMaskIntoConstraints = NO;
                     separator.backgroundColor = [UIColor borderColor];
-                    [separator addConstraint:[separator.widthAnchor constraintEqualToConstant:0.5]];
+                    [separator addConstraint:[separator.widthAnchor constraintEqualToConstant:[MarkdownViewStyleManager sharedInstance].tableBorderWidth]];
                     [self.stackView addArrangedSubview:separator];
                 }
 
