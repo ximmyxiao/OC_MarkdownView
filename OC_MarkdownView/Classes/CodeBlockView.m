@@ -78,17 +78,20 @@
     label.attributedText = result;
     label.backgroundColor = [UIColor clearColor];
     [label sizeToFit];
+    
+    UIEdgeInsets inset = [MarkdownViewStyleManager sharedInstance].codeblockScrollEdgeInsets;
     UIScrollView* scrollView = [[UIScrollView alloc] init];
-    scrollView.contentInset = UIEdgeInsetsMake(16, 16, 16, 16);
+    scrollView.contentInset = inset;
     scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    scrollView.backgroundColor = UIColorFromRGB(0xF7F7F9);
-    scrollView.layer.cornerRadius = 6;
+    scrollView.backgroundColor = [MarkdownViewStyleManager sharedInstance].codeBlockScrollBgColor;
+    scrollView.layer.cornerRadius = [MarkdownViewStyleManager sharedInstance].codeBlockScrollBgCornerRadius;
     scrollView.layer.masksToBounds = YES;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.showsHorizontalScrollIndicator = NO;
     [scrollView addSubview:label];
 
-    CGFloat scrollViewHeight = ceilf(label.frame.size.height + 16 * 2);
+    CGFloat paddingHeight = inset.top + inset.bottom;
+    CGFloat scrollViewHeight = ceilf(label.frame.size.height + paddingHeight);
     [scrollView addConstraints:@[
         [scrollView.contentLayoutGuide.topAnchor constraintEqualToAnchor:label.topAnchor
                                                                 constant:0],

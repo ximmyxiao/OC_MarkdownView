@@ -6,6 +6,7 @@
 //
 
 #import "InlineTextStyleManager.h"
+#import "MarkdownViewStyleManager.h"
 
 @interface InlineTextStyleManager ()
 @property (nonatomic, assign) CGFloat fontSize;
@@ -38,7 +39,7 @@
 {
     self = [super init];
     if (self) {
-        self.fontSize = 17;
+        self.fontSize = [MarkdownViewStyleManager sharedInstance].mainFontSize;
         self.styleFont = [UIFont systemFontOfSize:self.fontSize];
     }
     return self;
@@ -63,11 +64,11 @@
 {
     NSMutableParagraphStyle* ps = [NSMutableParagraphStyle new];
 
-    CGFloat lineSpacingScale = 0.125;
+    CGFloat lineSpacingScale = [MarkdownViewStyleManager sharedInstance].inlineTextLineSpacingScale;
     if (self.level == 1) {
-        lineSpacingScale = 1.125;
+        lineSpacingScale = [MarkdownViewStyleManager sharedInstance].inlineTextLineSpacingScaleInHeadingLevel1;
     } else if (self.level == 2) {
-        lineSpacingScale = 2.125;
+        lineSpacingScale = [MarkdownViewStyleManager sharedInstance].inlineTextLineSpacingScaleInHeadingLevel2;
     }
     ps.lineSpacing = self.fontSize * lineSpacingScale;
 
@@ -111,8 +112,8 @@
 - (NSDictionary*)codeAttributes
 {
     NSDictionary* codeAttri = @{
-        NSFontAttributeName : [UIFont systemFontOfSize:ceilf(self.fontSize * 0.85)],
-        NSBackgroundColorAttributeName : UIColorFromRGB(0xF7F7F9),
+        NSFontAttributeName : [UIFont systemFontOfSize:[MarkdownViewStyleManager sharedInstance].inlineTextCodeFontSize],
+        NSBackgroundColorAttributeName : [MarkdownViewStyleManager sharedInstance].inlineTextCodeTextColor,
         NSParagraphStyleAttributeName : [self defaultParagraphStyle],
     };
 
@@ -132,8 +133,13 @@
 
 - (void)configWithHeadingLevel:(NSInteger)level
 {
-    NSArray* scaleArray = @[ @(2), @(1.5), @(1.25), @(1), @(0.875), @(0.85) ];
-    CGFloat scale = [scaleArray[level - 1] floatValue];
-    self.fontSize = ceilf(17 * scale);
+    NSArray* headingFontSizeArray = @[ @([MarkdownViewStyleManager sharedInstance].inlineTextFontSizeOfHeadingLevel1),
+                                       @([MarkdownViewStyleManager sharedInstance].inlineTextFontSizeOfHeadingLevel2),
+                                       @([MarkdownViewStyleManager sharedInstance].inlineTextFontSizeOfHeadingLevel3),
+                                       @([MarkdownViewStyleManager sharedInstance].inlineTextFontSizeOfHeadingLevel4),
+                                       @([MarkdownViewStyleManager sharedInstance].inlineTextFontSizeOfHeadingLevel5),
+                                       @([MarkdownViewStyleManager sharedInstance].inlineTextFontSizeOfHeadingLevel6)
+    ];
+    self.fontSize = [headingFontSizeArray[level - 1] floatValue];
 }
 @end

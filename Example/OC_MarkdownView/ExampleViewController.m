@@ -7,6 +7,7 @@
 
 #import "ExampleViewController.h"
 #import "MVViewController.h"
+#import "MarkdownViewStyleManager.h"
 
 @interface ExampleViewController () <UITableViewDelegate>
 @property (nonatomic, strong) NSIndexPath* currentSelectIndexPath;
@@ -17,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [MarkdownViewStyleManager sharedInstance].mainFontSize = 20.0;
 }
 
 /*

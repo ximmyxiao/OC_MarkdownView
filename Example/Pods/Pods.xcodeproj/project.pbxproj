@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		004061E01742EF751CBC721CFC41EDD2 /* houdini_html_e.c in Sources */ = {isa = PBXBuildFile; fileRef = ACF4DC9F24B01EC33CF90643D39C0661 /* houdini_html_e.c */; };
-		0096AA542E01450A00D15415 /* MarkdownViewStyleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0096AA522E01450A00D15415 /* MarkdownViewStyleManager.h */; };
+		0096AA542E01450A00D15415 /* MarkdownViewStyleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0096AA522E01450A00D15415 /* MarkdownViewStyleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0096AA552E01450A00D15415 /* MarkdownViewStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0096AA532E01450A00D15415 /* MarkdownViewStyleManager.m */; };
 		0376E7E981B0DF8ACFB0AF04CD812B7A /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A38EBB1890789DF8AE1598E4E3A90C0 /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03E3939B2C9D0826A333EE037F60290C /* plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = E60F7AB51BAA04F9E2CD9175E85A54FB /* plugin.c */; };
@@ -547,10 +547,10 @@
 				301C47C9D65D0021BC77B8748C5D9453 /* UIColor+Ex.m */,
 				30B603970B6EB9D6C42221D624E060D1 /* UIImage+Ex.h */,
 				5DDE9606BCFF304A5E8CA9888068FA39 /* UIImage+Ex.m */,
-				A3BE123080DA4ADCF437C40FDA91F589 /* Pod */,
-				76C04025BAFED3AE738F9AE9944AACA7 /* Support Files */,
 				0096AA522E01450A00D15415 /* MarkdownViewStyleManager.h */,
 				0096AA532E01450A00D15415 /* MarkdownViewStyleManager.m */,
+				A3BE123080DA4ADCF437C40FDA91F589 /* Pod */,
+				76C04025BAFED3AE738F9AE9944AACA7 /* Support Files */,
 			);
 			name = OC_MarkdownView;
 			path = ../..;
@@ -667,7 +667,6 @@
 				A4A9A54A92565E4890C55252E46838CE /* MarkdownViewHeader.h in Headers */,
 				B14512865C6B55C20D746DA8C5FBA3A0 /* NodeToViewManager.h in Headers */,
 				A6201F702442FD8207AC106FCA92BD37 /* NodeType.h in Headers */,
-				0096AA542E01450A00D15415 /* MarkdownViewStyleManager.h in Headers */,
 				65B5A5E108435516349F8D8625018E76 /* OC_MarkdownView-umbrella.h in Headers */,
 				359258CBB732632F01846088FF8E9729 /* OrderedListView.h in Headers */,
 				920141F19B6211B965D68B42CF89B23C /* ParagrahView.h in Headers */,
@@ -675,6 +674,7 @@
 				A6A2E64B1BF6C3EB79821D96B32CBC2C /* TableColumnView.h in Headers */,
 				48EE8BA90FAF6BE3974F624CD2303F50 /* TableView.h in Headers */,
 				E3237DC3344C6A772234F9A1EA0FA856 /* TaskListView.h in Headers */,
+				0096AA542E01450A00D15415 /* MarkdownViewStyleManager.h in Headers */,
 				ED62C9040FCBF8B75320C1789B6746A4 /* UIColor+Ex.h in Headers */,
 				3D1B5A83461F29941C993B81628153CC /* UIImage+Ex.h in Headers */,
 			);

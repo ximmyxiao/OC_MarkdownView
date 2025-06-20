@@ -10,6 +10,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
     markdownView.markdownText = @"# Hello World\n\nThis is a Markdown text.\n\n- Item 1\n- Item 2\n- Item 3";
     [self.view addSubview:markdownView];
 ```
+
+some markdown styles canbe customed like this (more details can be found in the MarkdownViewStyleManager):
+```
+    [MarkdownViewStyleManager sharedInstance].mainFontSize = 20.0;
+```
+
 ## Requirements
 - iOS 17.0 or later
 ## Installation
