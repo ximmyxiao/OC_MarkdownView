@@ -18,6 +18,7 @@ some markdown styles canbe customed like this (more details can be found in the 
 
 ## Requirements
 - iOS 17.0 or later
+
 ## Installation
 
 OC_MarkdownView is available through [CocoaPods](https://cocoapods.org). To install
