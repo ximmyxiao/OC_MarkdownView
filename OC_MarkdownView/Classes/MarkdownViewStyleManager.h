@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) CGFloat inlineTextFontSizeOfHeadingLevel5;
 @property(nonatomic,assign) CGFloat inlineTextFontSizeOfHeadingLevel6;
 
+@property(nonatomic,assign) CGFloat listSpacingBetweenItems;
+
 @end
 
 NS_ASSUME_NONNULL_END

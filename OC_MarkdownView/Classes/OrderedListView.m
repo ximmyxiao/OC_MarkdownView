@@ -8,7 +8,7 @@
 #import "OrderedListView.h"
 #import "NodeToViewManager.h"
 #import "UIImage+Ex.h"
-
+#import "MarkdownViewStyleManager.h"
 @interface OrderedListView ()
 @property (nonatomic, strong) UIStackView* stackView;
 @end
@@ -69,7 +69,7 @@
             itemStackView.axis = UILayoutConstraintAxisHorizontal;
             itemStackView.translatesAutoresizingMaskIntoConstraints = NO;
 
-            UIFont* indexFont = [UIFont systemFontOfSize:17];
+            UIFont* indexFont = [UIFont systemFontOfSize:[MarkdownViewStyleManager sharedInstance].mainFontSize];
             UILabel* indexLabel = [[UILabel alloc] init];
             indexLabel.translatesAutoresizingMaskIntoConstraints = NO;
             indexLabel.text = [NSString stringWithFormat:@"%ld.", index];
@@ -95,7 +95,7 @@
                                                          constant:lineHeight / 2 - [indexFont lineHeight] / 2],
                     [view.topAnchor constraintEqualToAnchor:wrapperView.topAnchor],
                     [view.leadingAnchor constraintEqualToAnchor:indexLabel.trailingAnchor
-                                                       constant:5],
+                                                       constant:[MarkdownViewStyleManager sharedInstance].listSpacingBetweenItems],
                     [view.bottomAnchor constraintEqualToAnchor:wrapperView.bottomAnchor],
                     [view.trailingAnchor constraintEqualToAnchor:wrapperView.trailingAnchor],
 
@@ -107,7 +107,7 @@
                                                          constant:0],
                     [view.topAnchor constraintEqualToAnchor:wrapperView.topAnchor],
                     [view.leadingAnchor constraintEqualToAnchor:indexLabel.trailingAnchor
-                                                       constant:5],
+                                                       constant:[MarkdownViewStyleManager sharedInstance].listSpacingBetweenItems],
                     [view.bottomAnchor constraintEqualToAnchor:wrapperView.bottomAnchor],
                     [view.trailingAnchor constraintEqualToAnchor:wrapperView.trailingAnchor],
 

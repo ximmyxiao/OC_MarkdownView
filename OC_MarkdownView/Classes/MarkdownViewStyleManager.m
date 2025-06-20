@@ -54,5 +54,7 @@
     self.inlineTextFontSizeOfHeadingLevel5 = ceilf(self.mainFontSize * 0.85);
     self.inlineTextFontSizeOfHeadingLevel6 = ceilf(self.mainFontSize * 0.85);
     
+    self.listSpacingBetweenItems = 5;
+    
 }
 @end
