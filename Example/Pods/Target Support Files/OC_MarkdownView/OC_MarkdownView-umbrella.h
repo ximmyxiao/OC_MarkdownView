@@ -19,7 +19,6 @@
 #import "MarkdownView.h"
 #import "MarkdownViewHeader.h"
 #import "NodeToViewManager.h"
-#import "NodeType.h"
 #import "OrderedListView.h"
 #import "ParagrahView.h"
 #import "QuoteView.h"
@@ -28,6 +27,7 @@
 #import "TaskListView.h"
 #import "UIColor+Ex.h"
 #import "UIImage+Ex.h"
+#import "MarkdownViewStyleManager.h"
 
 FOUNDATION_EXPORT double OC_MarkdownViewVersionNumber;
 FOUNDATION_EXPORT const unsigned char OC_MarkdownViewVersionString[];

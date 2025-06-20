@@ -34,6 +34,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign) CGFloat listSpacingBetweenItems;
 
+@property(nonatomic,assign) CGFloat quoteMarkerCornerRadius;
+@property(nonatomic,assign) CGFloat quoteMarkerWidth;
+@property(nonatomic,assign) CGFloat quoteMarkerSpacing;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,6 +7,7 @@
 
 #import "QuoteView.h"
 #import "NodeToViewManager.h"
+#import "MarkdownViewStyleManager.h"
 
 @interface QuoteView ()
 @property (nonatomic, strong) UIStackView* stackView;
@@ -24,7 +25,7 @@
 - (void)constructUI
 {
     self.stackView = [[UIStackView alloc] init];
-    self.stackView.spacing = 8;
+    self.stackView.spacing = [MarkdownViewStyleManager sharedInstance].quoteMarkerSpacing;
     self.stackView.axis = UILayoutConstraintAxisHorizontal;
     self.stackView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.stackView];
@@ -57,10 +58,10 @@
     [[self.stackView arrangedSubviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     UIView* quoteMarker = [UIView new];
     quoteMarker.backgroundColor = [UIColor borderColor];
-    quoteMarker.layer.cornerRadius = 5;
+    quoteMarker.layer.cornerRadius = [MarkdownViewStyleManager sharedInstance].quoteMarkerCornerRadius;
     quoteMarker.layer.masksToBounds = YES;
     quoteMarker.translatesAutoresizingMaskIntoConstraints = NO;
-    [quoteMarker addConstraint:[quoteMarker.widthAnchor constraintEqualToConstant:4]];
+    [quoteMarker addConstraint:[quoteMarker.widthAnchor constraintEqualToConstant:[MarkdownViewStyleManager sharedInstance].quoteMarkerWidth]];
     [self.stackView addArrangedSubview:quoteMarker];
 
     UIView* view = [[NodeToViewManager sharedInstance] viewForNode:self.node withDefaultAttributes:@{ STYLE_TEXT_ATTRIBUTE_KEY_NAME : @ { NSForegroundColorAttributeName : [UIColor secondaryTextColor] } }];

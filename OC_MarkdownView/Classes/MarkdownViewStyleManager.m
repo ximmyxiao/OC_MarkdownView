@@ -56,5 +56,8 @@
     
     self.listSpacingBetweenItems = 5;
     
+    self.quoteMarkerCornerRadius = 5;
+    self.quoteMarkerWidth = 4;
+    
 }
 @end
