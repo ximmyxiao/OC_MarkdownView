@@ -18,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [MarkdownViewStyleManager sharedInstance].mainFontSize = 20.0;
+    [MarkdownViewStyleManager sharedInstance].mainFontSize = 30.0;
 }
 
 /*
