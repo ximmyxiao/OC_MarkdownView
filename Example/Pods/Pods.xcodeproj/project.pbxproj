@@ -62,7 +62,6 @@
 		85168164AF7450BD4AE65B4408345F9A /* CMarkNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD87BAD6BA1907D463A55076A8F370 /* CMarkNode.m */; };
 		876996BF6F9ECA7BFB120FC0B9B4F4DF /* plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 7969CE74B7A004F5BC4E6E6DD7F57DF4 /* plugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		889147211B107B8208CF67C7DB2C7F04 /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E1E673C743448E9DE7C47BF8DD569 /* blocks.c */; };
-		89C5FC07FBDE6F4207C82856C42F2D68 /* NodeType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6524AC697EBB45D636FC0AA45187F0FE /* NodeType.m */; };
 		8A2E1B0C6BBEEE1766AFA3B6FCCB13AA /* tagfilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 329199ED6C420E970D9E480422FC656A /* tagfilter.c */; };
 		8FAF6E4795371B074C1EE0B3753ADEEE /* ext_scanners.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD63FA601ACE5569F79A6678749DCD6 /* ext_scanners.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		90C5E735009DBA075962B3D115473415 /* libcmark_gfm.h in Headers */ = {isa = PBXBuildFile; fileRef = FF7ED62B9891E64971CD9BDAE965C2FB /* libcmark_gfm.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -78,7 +77,6 @@
 		A1958D533F1B21DBA53B8F7B0D19E3AF /* BulletedListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87EEBA6C3E2CB859463CD24B0F41E476 /* BulletedListView.m */; };
 		A4020263DAA0AC337DFF3710BD23B340 /* syntax_extension.c in Sources */ = {isa = PBXBuildFile; fileRef = A6F819540CE454AEB7603CB6B9E6DFA2 /* syntax_extension.c */; };
 		A4A9A54A92565E4890C55252E46838CE /* MarkdownViewHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = B9BCA655904BFA4FF88EE6038230C13E /* MarkdownViewHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6201F702442FD8207AC106FCA92BD37 /* NodeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 002BA3070B02E76DC9D9AC7A6F2B1EFE /* NodeType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6530339EB2BEFB3961B1416CB902BD7 /* cmark-gfm-extension_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8F49DDA1EA29A5FF1676DE927CFA2B /* cmark-gfm-extension_api.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6A2E64B1BF6C3EB79821D96B32CBC2C /* TableColumnView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC1464920A080E6260160176B61FF1C /* TableColumnView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A977126EBC3960AB08391AF79F820609 /* libcmark_gfm-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCE1E1921325F1E81C4DF0F0E8DB251 /* libcmark_gfm-dummy.m */; };
@@ -99,7 +97,6 @@
 		C6DC1369C6D14945ACEEDF5DF0EC1B57 /* Pods-OC_MarkdownView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB734D93D0FD76BB81D8974D5B24FE /* Pods-OC_MarkdownView_Example-dummy.m */; };
 		CA22FF2427C23E50A83196197D558B84 /* html.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E117BD021DF84589774C9038E89CC87 /* html.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA3BEF6F8091FDC6F57816D1E3D87CCF /* utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E986A730B70737FC984858561A5778B /* utf8.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D3B1264879AEF0EC6EFBDDED8708FD99 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A54C41CC72F0215B6631B41C7DBB708 /* ReplaceMe.m */; };
 		D7117B3D49184809A7853127B74C9ED0 /* chunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ED4ACEFD19944C832C6F9C468368855 /* chunk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8B87669231FD619180663EF7E8B100E /* references.h in Headers */ = {isa = PBXBuildFile; fileRef = 047652F856C4A7A5E12C4127AE21C8D5 /* references.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D96F4885DDA6E54FB4CD2DD661C1E4F2 /* CMarkNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 86DD31B2881A95EEB279EAB84E0BBD3B /* CMarkNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -158,7 +155,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		002BA3070B02E76DC9D9AC7A6F2B1EFE /* NodeType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NodeType.h; path = OC_MarkdownView/Classes/NodeType.h; sourceTree = "<group>"; };
 		0096AA522E01450A00D15415 /* MarkdownViewStyleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MarkdownViewStyleManager.h; path = OC_MarkdownView/Classes/MarkdownViewStyleManager.h; sourceTree = "<group>"; };
 		0096AA532E01450A00D15415 /* MarkdownViewStyleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MarkdownViewStyleManager.m; path = OC_MarkdownView/Classes/MarkdownViewStyleManager.m; sourceTree = "<group>"; };
 		0169BF4FEDC1BC14DB1450E3920EB38C /* OC_MarkdownView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OC_MarkdownView-dummy.m"; sourceTree = "<group>"; };
@@ -213,7 +209,6 @@
 		55EFD551D68DA59F7C32CC8B0B8CD177 /* TableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TableView.m; path = OC_MarkdownView/Classes/TableView.m; sourceTree = "<group>"; };
 		56BD059775F28B4301B46876ECE9A349 /* references.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = references.c; path = Sources/libcmark_gfm/references.c; sourceTree = "<group>"; };
 		56C9EBC286CD33BE38CB97F4AEDE2058 /* libcmark_gfm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libcmark_gfm.debug.xcconfig; sourceTree = "<group>"; };
-		5A54C41CC72F0215B6631B41C7DBB708 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = OC_MarkdownView/Classes/ReplaceMe.m; sourceTree = "<group>"; };
 		5C70FFA9015D6C3CAC3C0FB730ED2BD3 /* Pods-OC_MarkdownView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OC_MarkdownView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5CA15029822E903B608003BF1061E5CB /* arena.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = arena.c; path = Sources/libcmark_gfm/arena.c; sourceTree = "<group>"; };
 		5D66269297CAFD78B752A8352A4BFDAC /* strikethrough.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = strikethrough.h; path = Sources/libcmark_gfm/include/strikethrough.h; sourceTree = "<group>"; };
@@ -226,7 +221,6 @@
 		63446C4927DF882B4B35AD4F8D12485B /* Pods-OC_MarkdownView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OC_MarkdownView_Tests-dummy.m"; sourceTree = "<group>"; };
 		63E89F37E937BEB100F62A8AFAF39313 /* InlineTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InlineTextView.h; path = OC_MarkdownView/Classes/InlineTextView.h; sourceTree = "<group>"; };
 		64C75FD6C90548478ACDAD0D943CAC47 /* OrderedListView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OrderedListView.m; path = OC_MarkdownView/Classes/OrderedListView.m; sourceTree = "<group>"; };
-		6524AC697EBB45D636FC0AA45187F0FE /* NodeType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NodeType.m; path = OC_MarkdownView/Classes/NodeType.m; sourceTree = "<group>"; };
 		673CB00E4A1A43E76C8CD5EF00E18098 /* iterator.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = iterator.c; path = Sources/libcmark_gfm/iterator.c; sourceTree = "<group>"; };
 		67BD404E84846599E07820453AE9A9B4 /* node.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = node.c; path = Sources/libcmark_gfm/node.c; sourceTree = "<group>"; };
 		6F526FC25F69D6FC061DF32D955AD6DD /* map.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = map.h; path = Sources/libcmark_gfm/include/map.h; sourceTree = "<group>"; };
@@ -528,15 +522,12 @@
 				B9BCA655904BFA4FF88EE6038230C13E /* MarkdownViewHeader.h */,
 				A0989C9D6475EC88A15A83B33CEC2CCD /* NodeToViewManager.h */,
 				35482E30A89D852746DEB99811F4A493 /* NodeToViewManager.m */,
-				002BA3070B02E76DC9D9AC7A6F2B1EFE /* NodeType.h */,
-				6524AC697EBB45D636FC0AA45187F0FE /* NodeType.m */,
 				EA0C15D7646EBC5EC6C8071BA7C97372 /* OrderedListView.h */,
 				64C75FD6C90548478ACDAD0D943CAC47 /* OrderedListView.m */,
 				DB83F74BF2CC6DCA426E8E1914089DF2 /* ParagrahView.h */,
 				7660D2E41D6FF58741F4A9C49AE3A506 /* ParagrahView.m */,
 				E580A34BE56148AEF847BA71B3E38047 /* QuoteView.h */,
 				3CC2910DBEDC6758D846ED112F40D8F2 /* QuoteView.m */,
-				5A54C41CC72F0215B6631B41C7DBB708 /* ReplaceMe.m */,
 				0DC1464920A080E6260160176B61FF1C /* TableColumnView.h */,
 				40188B3A9BB2958BB5F680DFEF6F261A /* TableColumnView.m */,
 				9B5FD19D9B1670066F5BD7DFF7049819 /* TableView.h */,
@@ -666,7 +657,6 @@
 				08F811202D0B89BE65745C53FBA26FFD /* MarkdownView.h in Headers */,
 				A4A9A54A92565E4890C55252E46838CE /* MarkdownViewHeader.h in Headers */,
 				B14512865C6B55C20D746DA8C5FBA3A0 /* NodeToViewManager.h in Headers */,
-				A6201F702442FD8207AC106FCA92BD37 /* NodeType.h in Headers */,
 				65B5A5E108435516349F8D8625018E76 /* OC_MarkdownView-umbrella.h in Headers */,
 				359258CBB732632F01846088FF8E9729 /* OrderedListView.h in Headers */,
 				920141F19B6211B965D68B42CF89B23C /* ParagrahView.h in Headers */,
@@ -857,12 +847,10 @@
 				DDAB3A7CDA4EBA5D4FF39777FDD373D9 /* InlineTextView.m in Sources */,
 				7E074826DA375794158CDD4F47585AD7 /* MarkdownView.m in Sources */,
 				765EAED4EB76ADFECE71A7F021F9F729 /* NodeToViewManager.m in Sources */,
-				89C5FC07FBDE6F4207C82856C42F2D68 /* NodeType.m in Sources */,
 				DD03A9E2A4E51B2DCFDBA43342E93A62 /* OC_MarkdownView-dummy.m in Sources */,
 				B8BA756FB93FCED6051241F92F43E447 /* OrderedListView.m in Sources */,
 				66661835DDE0DC11AE6A1DF65397A222 /* ParagrahView.m in Sources */,
 				0BE902C00E2E7EE3137932549E5E83E7 /* QuoteView.m in Sources */,
-				D3B1264879AEF0EC6EFBDDED8708FD99 /* ReplaceMe.m in Sources */,
 				B81B3B4E441F3C0FE5F3DEFEF91D324B /* TableColumnView.m in Sources */,
 				0096AA552E01450A00D15415 /* MarkdownViewStyleManager.m in Sources */,
 				51ECB18D8E9F54D023A8C2A1470D0E16 /* TableView.m in Sources */,
