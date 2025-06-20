@@ -7,6 +7,7 @@
 
 #import "TaskListView.h"
 #import "NodeToViewManager.h"
+#import "MarkdownViewStyleManager.h"
 
 @interface TaskListView ()
 @property (nonatomic, strong) UIStackView* stackView;
@@ -66,11 +67,15 @@
             itemStackView.axis = UILayoutConstraintAxisHorizontal;
             itemStackView.translatesAutoresizingMaskIntoConstraints = NO;
             BOOL isCompleted = [child isTaskListItemChecked];
-            UIImage* image = [UIImage systemImageNamed:isCompleted ? @"checkmark.square.fill" : @"square"];
+            UIImage* image = [MarkdownViewStyleManager sharedInstance].taskListImageMarker;
+            if (isCompleted)
+            {
+                image = [MarkdownViewStyleManager sharedInstance].taskListImageMarkerForCompleted;
+            }
             UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
             imageView.translatesAutoresizingMaskIntoConstraints = NO;
             imageView.contentMode = UIViewContentModeTop;
-            [imageView addConstraints:@[ [imageView.widthAnchor constraintEqualToConstant:19] ]];
+            [imageView addConstraints:@[ [imageView.widthAnchor constraintEqualToConstant:[MarkdownViewStyleManager sharedInstance].listImageMarkerWidth] ]];
             [itemStackView addArrangedSubview:imageView];
 
             UIView* view = [[NodeToViewManager sharedInstance] viewForNode:child];

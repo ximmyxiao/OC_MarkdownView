@@ -7,7 +7,7 @@
 
 #import "BulletedListView.h"
 #import "NodeToViewManager.h"
-#import "UIImage+Ex.h"
+#import "MarkdownViewStyleManager.h"
 
 @interface BulletedListView ()
 @property (nonatomic, strong) UIStackView* stackView;
@@ -67,12 +67,12 @@
             itemStackView.axis = UILayoutConstraintAxisHorizontal;
             itemStackView.translatesAutoresizingMaskIntoConstraints = NO;
 
-            UIImage* image = [UIImage systemImageNamed:@"circle.fill"];
-            image = [image imageWithZoomScale:0.3];
-            UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
+
+            UIImage* markerImage = [MarkdownViewStyleManager sharedInstance].bulletedListImageMarker;
+            UIImageView* imageView = [[UIImageView alloc] initWithImage:markerImage];
             imageView.translatesAutoresizingMaskIntoConstraints = NO;
             imageView.contentMode = UIViewContentModeTop;
-            [imageView addConstraints:@[ [imageView.widthAnchor constraintEqualToConstant:19] ]];
+            [imageView addConstraints:@[ [imageView.widthAnchor constraintEqualToConstant:[MarkdownViewStyleManager sharedInstance].listImageMarkerWidth] ]];
             //            [itemStackView addArrangedSubview:imageView];
 
             UIView* view = [[NodeToViewManager sharedInstance] viewForNode:child];
@@ -89,10 +89,10 @@
                 [wrapperView addConstraints:@[
                     [imageView.leadingAnchor constraintEqualToAnchor:wrapperView.leadingAnchor],
                     [imageView.topAnchor constraintEqualToAnchor:wrapperView.topAnchor
-                                                        constant:lineHeight / 2 - image.size.height / 2],
+                                                        constant:lineHeight / 2 - markerImage.size.height / 2],
                     [view.topAnchor constraintEqualToAnchor:wrapperView.topAnchor],
                     [view.leadingAnchor constraintEqualToAnchor:imageView.trailingAnchor
-                                                       constant:5],
+                                                       constant:[MarkdownViewStyleManager sharedInstance].spacingBetweenListImageMarkerAndText],
                     [view.bottomAnchor constraintEqualToAnchor:wrapperView.bottomAnchor],
                     [view.trailingAnchor constraintEqualToAnchor:wrapperView.trailingAnchor],
 
@@ -104,7 +104,7 @@
                                                         constant:0],
                     [view.topAnchor constraintEqualToAnchor:wrapperView.topAnchor],
                     [view.leadingAnchor constraintEqualToAnchor:imageView.trailingAnchor
-                                                       constant:5],
+                                                       constant:[MarkdownViewStyleManager sharedInstance].spacingBetweenListImageMarkerAndText],
                     [view.bottomAnchor constraintEqualToAnchor:wrapperView.bottomAnchor],
                     [view.trailingAnchor constraintEqualToAnchor:wrapperView.trailingAnchor],
 

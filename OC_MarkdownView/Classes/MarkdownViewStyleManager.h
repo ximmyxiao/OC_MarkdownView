@@ -33,6 +33,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) CGFloat inlineTextFontSizeOfHeadingLevel6;
 
 @property(nonatomic,assign) CGFloat listSpacingBetweenItems;
+@property(nonatomic,assign) CGFloat listImageMarkerWidth;
+@property(nonatomic,strong) UIImage* bulletedListImageMarker;
+@property(nonatomic,strong) UIImage* taskListImageMarker;
+@property(nonatomic,strong) UIImage* taskListImageMarkerForCompleted;
+
+@property(nonatomic,assign) CGFloat spacingBetweenListImageMarkerAndText;
+
 
 @property(nonatomic,assign) CGFloat quoteMarkerCornerRadius;
 @property(nonatomic,assign) CGFloat quoteMarkerWidth;

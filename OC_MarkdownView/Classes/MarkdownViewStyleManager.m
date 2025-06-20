@@ -7,6 +7,7 @@
 //
 
 #import "MarkdownViewStyleManager.h"
+#import "UIImage+Ex.h"
 
 @implementation MarkdownViewStyleManager
 //singleton
@@ -55,6 +56,14 @@
     self.inlineTextFontSizeOfHeadingLevel6 = ceilf(self.mainFontSize * 0.85);
     
     self.listSpacingBetweenItems = 5;
+    self.listImageMarkerWidth = 19;
+    UIImage* image = [UIImage systemImageNamed:@"circle.fill"];
+    image = [image imageWithZoomScale:0.3];
+    self.bulletedListImageMarker = image;
+    self.taskListImageMarkerForCompleted = [UIImage systemImageNamed:@"checkmark.square.fill"];
+    self.taskListImageMarker = [UIImage systemImageNamed:@"square"];
+    
+    self.spacingBetweenListImageMarkerAndText = 5;
     
     self.quoteMarkerCornerRadius = 5;
     self.quoteMarkerWidth = 4;
