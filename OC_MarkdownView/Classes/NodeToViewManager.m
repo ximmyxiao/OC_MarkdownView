@@ -121,7 +121,7 @@
             [resultStackView addArrangedSubview:quoteView];
         } else {
             UILabel* result = [UILabel new];
-            result.backgroundColor = [UIColor greenColor];
+            result.backgroundColor = [UIColor clearColor];
             result.text = @"UNKNOWN";
             [resultStackView addArrangedSubview:result];
         }
@@ -142,7 +142,7 @@
 
     if ([[node nodeTypeName] isEqualToString:NodeTypeDocument]) {
         UIView* padView = [UIView new];
-        padView.backgroundColor = [UIColor greenColor];
+        padView.backgroundColor = [UIColor clearColor];
         [resultStackView addArrangedSubview:padView];
         //        [self.stackView addArrangedSubview:padView];
     }
