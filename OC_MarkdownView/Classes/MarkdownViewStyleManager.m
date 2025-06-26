@@ -36,6 +36,10 @@
 
 - (void)resetStyles {
     
+    self.mainTextColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+        return traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark ? UIColor.whiteColor : UIColor.blackColor;
+    }];
+    
     self.codeBlockFontSize = ceilf(self.mainFontSize * 0.85);
     self.codeBlockLineSpacing = ceilf(0.225 * self.mainFontSize);
     self.codeblockScrollEdgeInsets = UIEdgeInsetsMake(16, 16, 16, 16);

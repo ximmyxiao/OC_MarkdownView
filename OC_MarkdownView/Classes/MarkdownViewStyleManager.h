@@ -32,6 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) CGFloat mainFontSize;
 
 /**
+ * @brief The text color used for the main text.
+ */
+@property(nonatomic,strong) UIColor* mainTextColor;
+
+/**
  * @brief The font size used within code blocks.
  */
 @property(nonatomic,assign) CGFloat codeBlockFontSize;
