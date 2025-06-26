@@ -29,6 +29,7 @@
 {
     self = [super init];
     if (self) {
+        self.level = level;
         [self configWithHeadingLevel:level];
     }
 
@@ -115,6 +116,8 @@
     NSDictionary* codeAttri = @{
         NSFontAttributeName : [UIFont systemFontOfSize:[MarkdownViewStyleManager sharedInstance].inlineTextCodeFontSize],
         NSForegroundColorAttributeName : [MarkdownViewStyleManager sharedInstance].inlineTextCodeTextColor,
+        NSBackgroundColorAttributeName : [MarkdownViewStyleManager sharedInstance].inlineTextCodeTextBackgroundColor,
+
         NSParagraphStyleAttributeName : [self defaultParagraphStyle],
     };
 
@@ -141,6 +144,9 @@
                                        @([MarkdownViewStyleManager sharedInstance].inlineTextFontSizeOfHeadingLevel5),
                                        @([MarkdownViewStyleManager sharedInstance].inlineTextFontSizeOfHeadingLevel6)
     ];
-    self.fontSize = [headingFontSizeArray[level - 1] floatValue];
+    // add bounds check
+    if (level >= 1 || level < [headingFontSizeArray count]) {
+        self.fontSize = [headingFontSizeArray[level - 1] floatValue];
+    }
 }
 @end

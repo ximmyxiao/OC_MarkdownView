@@ -36,7 +36,7 @@
 
 - (void)resetStyles {
     
-    self.mainTextColor = [UIColor secondaryLabelColor];
+    self.mainTextColor = [UIColor labelColor];
     
     self.inlineTextHeadingTextColor = [UIColor labelColor];
     
@@ -49,7 +49,8 @@
     self.inlineTextLineSpacingScale = 0.125;
     self.inlineTextLineSpacingScaleInHeadingLevel1 = 1.125;
     self.inlineTextLineSpacingScaleInHeadingLevel2 = 2.125;
-    self.inlineTextCodeTextColor = [UIColor tertiaryLabelColor];
+    self.inlineTextCodeTextColor = [UIColor labelColor];
+    self.inlineTextCodeTextBackgroundColor = UIColorFromRGB(0xf7f7f9);
     self.inlineTextCodeFontSize = ceilf(self.mainFontSize * 0.85);
     
     self.inlineTextFontSizeOfHeadingLevel1 = ceilf(self.mainFontSize * 2);

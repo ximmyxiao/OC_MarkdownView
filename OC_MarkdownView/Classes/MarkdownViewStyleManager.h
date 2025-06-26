@@ -82,6 +82,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) UIColor* inlineTextCodeTextColor;
 
 /**
+ * @brief Background color for inline code segments.
+ */
+@property(nonatomic,strong) UIColor* inlineTextCodeTextBackgroundColor;
+
+/**
  * @brief Font size for inline code segments.
  */
 @property(nonatomic,assign) CGFloat inlineTextCodeFontSize;
