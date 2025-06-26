@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OC_MarkdownView'
-  s.version          = '0.1.24'
+  s.version          = '0.1.25'
   s.summary          = 'MarkdownView is a markdown render like swift-markdown-ui but write in ObjectiveC.'
 
 # This description is used to generate tags and improve search results.
