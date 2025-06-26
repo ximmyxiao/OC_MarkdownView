@@ -87,6 +87,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) CGFloat inlineTextCodeFontSize;
 
 /**
+ * @brief Text color for headings.
+ */
+@property(nonatomic,strong) UIColor* inlineTextHeadingTextColor;
+
+/**
  * @brief Font size for level 1 headings.
  */
 @property(nonatomic,assign) CGFloat inlineTextFontSizeOfHeadingLevel1;

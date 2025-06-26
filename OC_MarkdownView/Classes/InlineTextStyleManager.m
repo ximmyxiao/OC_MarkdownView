@@ -88,7 +88,8 @@
 
     NSDictionary* textAttri = @{
         NSFontAttributeName : [UIFont systemFontOfSize:self.fontSize],
-        NSParagraphStyleAttributeName : [self defaultParagraphStyle]
+        NSParagraphStyleAttributeName : [self defaultParagraphStyle],
+        NSForegroundColorAttributeName : [MarkdownViewStyleManager sharedInstance].mainTextColor
     };
 
     if ([self.defaultAttributes isKindOfClass:[NSDictionary class]]) {
@@ -102,9 +103,9 @@
     }
 
     if (self.level > 0) {
-        textAttri = @{ NSFontAttributeName : [UIFont systemFontOfSize:self.fontSize weight:UIFontWeightSemibold], NSParagraphStyleAttributeName : [self defaultParagraphStyle] };
+        textAttri = @{ NSFontAttributeName : [UIFont systemFontOfSize:self.fontSize weight:UIFontWeightSemibold], NSParagraphStyleAttributeName : [self defaultParagraphStyle], NSForegroundColorAttributeName : [MarkdownViewStyleManager sharedInstance].inlineTextHeadingTextColor};
     } else if (self.isTableHeaderRow == YES) {
-        textAttri = @{ NSFontAttributeName : [UIFont systemFontOfSize:self.fontSize weight:UIFontWeightSemibold], NSParagraphStyleAttributeName : [self defaultParagraphStyle] };
+        textAttri = @{ NSFontAttributeName : [UIFont systemFontOfSize:self.fontSize weight:UIFontWeightSemibold], NSParagraphStyleAttributeName : [self defaultParagraphStyle]};
     }
     return textAttri;
 }
@@ -113,7 +114,7 @@
 {
     NSDictionary* codeAttri = @{
         NSFontAttributeName : [UIFont systemFontOfSize:[MarkdownViewStyleManager sharedInstance].inlineTextCodeFontSize],
-        NSBackgroundColorAttributeName : [MarkdownViewStyleManager sharedInstance].inlineTextCodeTextColor,
+        NSForegroundColorAttributeName : [MarkdownViewStyleManager sharedInstance].inlineTextCodeTextColor,
         NSParagraphStyleAttributeName : [self defaultParagraphStyle],
     };
 

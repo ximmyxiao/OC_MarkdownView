@@ -36,9 +36,9 @@
 
 - (void)resetStyles {
     
-    self.mainTextColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
-        return traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark ? UIColor.whiteColor : UIColor.blackColor;
-    }];
+    self.mainTextColor = [UIColor secondaryLabelColor];
+    
+    self.inlineTextHeadingTextColor = [UIColor labelColor];
     
     self.codeBlockFontSize = ceilf(self.mainFontSize * 0.85);
     self.codeBlockLineSpacing = ceilf(0.225 * self.mainFontSize);
@@ -49,7 +49,7 @@
     self.inlineTextLineSpacingScale = 0.125;
     self.inlineTextLineSpacingScaleInHeadingLevel1 = 1.125;
     self.inlineTextLineSpacingScaleInHeadingLevel2 = 2.125;
-    self.inlineTextCodeTextColor = UIColorFromRGB(0xF7F7F9);
+    self.inlineTextCodeTextColor = [UIColor tertiaryLabelColor];
     self.inlineTextCodeFontSize = ceilf(self.mainFontSize * 0.85);
     
     self.inlineTextFontSizeOfHeadingLevel1 = ceilf(self.mainFontSize * 2);
